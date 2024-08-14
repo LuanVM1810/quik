@@ -12,7 +12,7 @@ const Header = () => {
 
   return (
     <nav className="flex items-center">
-      <p className="font-bold text-2xl">Quik</p>
+      <p className="relative font-bold text-4xl">Quik</p>
       <IoIosMenu
         size={"24px"}
         onClick={clickOpenMenu}
