@@ -47,10 +47,10 @@ const Header = () => {
         <div className="my-20 cursor-pointer font-semibold">Quik</div>
         <div className="text-gray-500 text-xl">
           <p>
-            Become a Quik Member for best products, inspiration and stories in
-            work.{" "}
-            <span className="font-bold text-[#2C2C2C] cursor-pointer">
-              Learn more
+            Trở thành Thành viên Quik để có những sản phẩm, nguồn cảm hứng và
+            câu chuyện hay nhất trong công việc.{" "}
+            <span className="font-bold text-[#2C2C2C] cursor-pointer hover:underline">
+              Tìm hiểu thêm
             </span>
           </p>
           <div className="flex my-3 text-base font-bold gap-2 mt-[30px]">
