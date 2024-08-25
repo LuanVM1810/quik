@@ -6,7 +6,7 @@ const Suggest = () => {
         <span className="text-lg">Bạn có thể thích</span>
         <IoIosArrowRoundForward size={"24px"} />
       </div>
-      <div className="flex gap-5 overflow-x-auto">
+      <div className="flex gap-5 overflow-x-auto pb-5 px-3">
         <img
           className="rounded-3xl shadow-image"
           width={"50%"}

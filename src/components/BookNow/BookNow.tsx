@@ -6,7 +6,7 @@ const BookNow = () => {
         <span className="text-lg">Đặt ngay hôm nay</span>
         <IoIosArrowRoundForward size={"24px"} />
       </div>
-      <div className="flex gap-5 overflow-x-auto">
+      <div className="flex gap-5 overflow-x-auto pb-5 px-3">
         <img
           className="rounded-3xl shadow-image"
           width={"50%"}

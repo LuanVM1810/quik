@@ -2,6 +2,7 @@ import { useState } from "react";
 import { IoIosMenu } from "react-icons/io";
 import { IoCloseOutline } from "react-icons/io5";
 import { GoChevronRight } from "react-icons/go";
+import QuikLogo from "../../assets/Logo Official@3x.png";
 
 const Header = () => {
   const [openMenu, setOpenMenu] = useState<boolean>(false);
@@ -12,17 +13,28 @@ const Header = () => {
 
   return (
     <nav className="flex items-center">
-      <p className="relative font-bold text-4xl">Quik</p>
+      <div>
+        <img
+          className="relative font-bold text-4xl w-[280px] lg:w-[300px]"
+          src={QuikLogo}
+        />
+      </div>
+
       <IoIosMenu
         size={"24px"}
         onClick={clickOpenMenu}
-        className="ml-auto rounded-full cursor-pointer"
+        className="ml-auto rounded-full cursor-pointer lg:hidden"
       />
       <div
-        className={`fixed w-[85%] md:w-[50%] ${
+        className={`fixed top-0 left-0 w-[100%] h-[100%] ${
+          openMenu === true ? `block bg-overlay z-1` : `hidden -z-1`
+        }transition-all duration-500`}
+      ></div>
+      <div
+        className={`fixed w-[85%] md:w-[50%] lg:hidden ${
           openMenu === true ? `translate-x-0` : `translate-x-[100%]`
         }  top-0 right-0 bottom-0 bg-white
-        transition-all duration-500 pl-8 pr-4 py-4 `}
+        transition-all duration-500 z-2 pl-8 pr-4 py-4 `}
       >
         <IoCloseOutline
           onClick={clickOpenMenu}
@@ -44,7 +56,9 @@ const Header = () => {
             Hồ sơ <GoChevronRight size={"24px"} />
           </li>
         </ul>
-        <div className="my-20 cursor-pointer font-semibold">Quik</div>
+        <div className="my-20 cursor-pointer font-semibold">
+          <img src={QuikLogo} />
+        </div>
         <div className="text-gray-500 text-xl">
           <p>
             Trở thành Thành viên Quik để có những sản phẩm, nguồn cảm hứng và
@@ -62,6 +76,15 @@ const Header = () => {
             </button>
           </div>
         </div>
+      </div>
+
+      <div className="hidden lg:block ml-auto text-lg">
+        <ul className="flex gap-32 font-semibold">
+          <li>Trang chủ</li>
+          <li>Lịch sử giao dịch</li>
+          <li>Về chúng tôi</li>
+          <li className="ml-16">Hồ sơ</li>
+        </ul>
       </div>
     </nav>
   );
