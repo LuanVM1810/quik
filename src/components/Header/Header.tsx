@@ -28,7 +28,7 @@ const Header = () => {
       <div
         className={`fixed top-0 left-0 w-[100%] h-[100%] ${
           openMenu === true ? `block bg-overlay z-1` : `hidden -z-1`
-        }transition-all duration-500`}
+        }transition-all duration-500 lg:hidden`}
       ></div>
       <div
         className={`fixed w-[85%] md:w-[50%] lg:hidden ${
