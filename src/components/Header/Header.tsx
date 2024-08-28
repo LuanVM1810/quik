@@ -3,6 +3,7 @@ import { IoIosMenu } from "react-icons/io";
 import { IoCloseOutline } from "react-icons/io5";
 import { GoChevronRight } from "react-icons/go";
 import QuikLogo from "../../assets/Logo Official@3x.png";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   const [openMenu, setOpenMenu] = useState<boolean>(false);
@@ -14,10 +15,12 @@ const Header = () => {
   return (
     <nav className="flex items-center">
       <div>
-        <img
-          className="relative font-bold text-4xl w-[280px] lg:w-[300px]"
-          src={QuikLogo}
-        />
+        <NavLink to="/">
+          <img
+            className="relative font-bold text-4xl w-[280px] lg:w-[300px]"
+            src={QuikLogo}
+          />
+        </NavLink>
       </div>
 
       <IoIosMenu
@@ -34,7 +37,7 @@ const Header = () => {
         className={`fixed w-[85%] md:w-[50%] lg:hidden ${
           openMenu === true ? `translate-x-0` : `translate-x-[100%]`
         }  top-0 right-0 bottom-0 bg-white
-        transition-all duration-500 z-2 pl-8 pr-4 py-4 `}
+        transition-all duration-500 z-10 pl-8 pr-4 py-4 `}
       >
         <IoCloseOutline
           onClick={clickOpenMenu}
