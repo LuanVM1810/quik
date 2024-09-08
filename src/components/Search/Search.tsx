@@ -1,15 +1,21 @@
 import { CiSearch } from "react-icons/ci";
 
-const Search = () => {
+type Props = {
+  placeholder: string;
+};
+
+const Search = ({ placeholder }: Props) => {
   return (
     <>
-      <div className="flex items-center my-10 bg-red-200 p-[1px] bg-gradient-to-r from-[#38AAF0]  to-[#42FCAC] rounded-3xl relative">
+      <div className="flex items-center my-10 border-2 border-[#506DF7] bg-white rounded-[8px] lg:w-[20%]">
+        <span className="ml-2">
+          <CiSearch size={"24px"} />
+        </span>
         <input
-          type="search"
-          placeholder="Tìm kiếm"
-          className="py-2 pl-12 pr-4 rounded-3xl w-full h-full outline-none relative"
+          placeholder={placeholder}
+          type="Search"
+          className=" w-full h-full rounded-[8px] px-4 py-2 outline-none"
         />
-        <CiSearch className="absolute top-2 left-4" size={"24px"} />
       </div>
     </>
   );

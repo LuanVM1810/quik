@@ -1,23 +1,18 @@
-import { useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Category = () => {
-  const navigate = useNavigate();
-  const goToAllSpace = () => {
-    navigate("/allspace");
-  };
   return (
-    <div className="flex items-center gap-4 text-sm">
-      <button
-        onClick={goToAllSpace}
-        className="p-[2px] w-[70%] bg-gradient-to-b from-[#42FCAC] via-[#36B2F0] to-[#506DF7] rounded-3xl"
-      >
-        <div className="rounded-3xl p-2 bg-white w-full h-full">
-          Không gian làm việc chung
-        </div>
-      </button>
-      <button className="p-[2px] w-[30%] bg-gradient-to-b from-[#42FCAC] via-[#36B2F0] to-[#506DF7] rounded-3xl">
-        <div className="rounded-3xl p-2 bg-white w-full h-full">Study Hub</div>
-      </button>
+    <div>
+      <ul className="flex flex-wrap gap-[12px] my-10 lg:flex-nowrap">
+        <NavLink to="/allspace">
+          <li className="btn-li">Không gian làm việc chung</li>
+        </NavLink>
+
+        <li className="btn-li">Phòng họp</li>
+        <li className="btn-li">Study hub</li>
+        <li className="btn-li">Không gian văn phòng</li>
+        <li className="btn-li">Không gian sự kiện</li>
+      </ul>
     </div>
   );
 };
