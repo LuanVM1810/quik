@@ -20,7 +20,7 @@ const HomePage = () => {
             className="w-[100%] h-[100%] absolute object-cover z-0 right-0 top-0 brightness-50"
           >
             <source
-              src="src\assets\3191291-uhd_3840_2160_25fps.mp4"
+              src="https://videos.pexels.com/video-files/3191291/3191291-uhd_2560_1440_25fps.mp4"
               type="video/mp4"
             />
           </video>
