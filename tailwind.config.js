@@ -13,6 +13,16 @@ export default {
       },
       colors: {
         "overlay": "#00000080",
+      },
+      keyframes: {
+        rotate: {
+          "0%": {transform: "rotate(-20deg)"},
+          "50%": {transform: "rotate(20deg)"},
+          "100%": {transform: "rotate(-20deg)"}
+        }
+      },
+      animation: {
+        rotate: "rotate 3s linear infinite",
       }
     },
   },
