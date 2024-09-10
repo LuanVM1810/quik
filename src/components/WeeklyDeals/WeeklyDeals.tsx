@@ -1,30 +1,55 @@
-import { IoIosArrowRoundForward } from "react-icons/io";
+import { Rating } from "@mui/material";
+import { FaRegHeart } from "react-icons/fa";
+import { roomList } from "../../constants";
+
 const WeeklyDeals = () => {
   return (
-    <nav className="flex flex-col gap-3">
-      <div className="flex items-center">
-        <span className="text-lg">Ưu đãi tuần này</span>{" "}
-        <IoIosArrowRoundForward size={"24px"} />
+    <nav className="flex flex-col gap-3 text-[#101010]">
+      <div className="flex items-center justify-between">
+        <span className="text-lg md:text-xl lg:text-2xl">Ưu đãi tuần này</span>
+        <button className="text-sm md:text-base lg:text-lg text-[#4C4DDC] hover:opacity-50">
+          Xem thêm
+        </button>
       </div>
-      <div className="flex gap-5 overflow-x-auto pb-5 px-3">
-        <img
-          className="rounded-3xl shadow-image"
-          width={"50%"}
-          height="50%"
-          src="https://s3-alpha-sig.figma.com/img/1c78/a69b/878b707cc79636de65adda67bf251589?Expires=1724630400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Kwb1O3K0VUTHaZJJJY83Z2QyRlxeTA0bKubbPxDt1mkKFei23IxZXSqR2gDEY4mKNRvdHksrGyKL8eElcdea7gOws2ZvvHzwApZKof8yZc8jVvnKMsde1w0YJK9Pb8uxtUpvMaBAYOj971YuCQ09BYb89LCbg~MF1eW3FIzoH5jahxSms4U3bxhsolbMw8hj03Al7WVSz88A4UJXsk4cxqU0lMiVGHCOAOn1MFGhBPYQNwncfjF-EZ3Gskx5DHst4Ks~t0MlpT~-WHLYVH0N97FT1roZipOHAuWXGoy2x7z4iZkdO83VQ531nGEuB3EeiWTudAZuWXf3xep4Upd9Fw__"
-        />
-        <img
-          className="rounded-3xl shadow-image"
-          width={"50%"}
-          height="50%"
-          src="https://s3-alpha-sig.figma.com/img/1c78/a69b/878b707cc79636de65adda67bf251589?Expires=1724630400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Kwb1O3K0VUTHaZJJJY83Z2QyRlxeTA0bKubbPxDt1mkKFei23IxZXSqR2gDEY4mKNRvdHksrGyKL8eElcdea7gOws2ZvvHzwApZKof8yZc8jVvnKMsde1w0YJK9Pb8uxtUpvMaBAYOj971YuCQ09BYb89LCbg~MF1eW3FIzoH5jahxSms4U3bxhsolbMw8hj03Al7WVSz88A4UJXsk4cxqU0lMiVGHCOAOn1MFGhBPYQNwncfjF-EZ3Gskx5DHst4Ks~t0MlpT~-WHLYVH0N97FT1roZipOHAuWXGoy2x7z4iZkdO83VQ531nGEuB3EeiWTudAZuWXf3xep4Upd9Fw__"
-        />
-        <img
-          className="rounded-3xl shadow-image"
-          width={"50%"}
-          height="50%"
-          src="https://s3-alpha-sig.figma.com/img/1c78/a69b/878b707cc79636de65adda67bf251589?Expires=1724630400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Kwb1O3K0VUTHaZJJJY83Z2QyRlxeTA0bKubbPxDt1mkKFei23IxZXSqR2gDEY4mKNRvdHksrGyKL8eElcdea7gOws2ZvvHzwApZKof8yZc8jVvnKMsde1w0YJK9Pb8uxtUpvMaBAYOj971YuCQ09BYb89LCbg~MF1eW3FIzoH5jahxSms4U3bxhsolbMw8hj03Al7WVSz88A4UJXsk4cxqU0lMiVGHCOAOn1MFGhBPYQNwncfjF-EZ3Gskx5DHst4Ks~t0MlpT~-WHLYVH0N97FT1roZipOHAuWXGoy2x7z4iZkdO83VQ531nGEuB3EeiWTudAZuWXf3xep4Upd9Fw__"
-        />
+      <div className="flex gap-5 overflow-x-auto pb-5">
+        {roomList.map((item) => (
+          <div className="bg-white shadow-room rounded-2xl min-w-[50%] h-[300px] md:h-[450px] lg:h-[500px]">
+            <div className="relative w-full h-[60%] md:h-[65%] lg:h-[70%]">
+              <img
+                className="rounded-tl-2xl rounded-tr-2xl object-cover w-full h-full"
+                src={item.img}
+              />
+              <span className="absolute cursor-pointer top-3 right-3 bg-[#1B1E28]/40 hover:bg-[#1b1e28]/80 p-2 rounded-full">
+                <FaRegHeart size={"16px"} color="white" />
+              </span>
+            </div>
+            <div className="px-2 flex flex-col gap-1">
+              <p className="pt-2 font-medium md:text-lg lg:text-xl animate-pulse">
+                {item.name}
+              </p>
+
+              <p className="text-xs md:text-sm lg:text-base text-[#7D848D]">
+                {item.address}
+              </p>
+              <div className="flex items-center gap-1 text-xs md:text-sm lg:text-base">
+                <Rating
+                  sx={{ color: "#FFD336" }}
+                  name="read-only"
+                  size="small"
+                  precision={0.1}
+                  value={item.rating}
+                  readOnly
+                />
+                <p className="font-normal text-xs text-[#1B1E28] md:text-sm lg:text-base">
+                  {item.rating}
+                </p>
+              </div>
+            </div>
+            <p className="pl-2 my-4 text-sm md:text-base lg:text-lg font-bold text-[#4C4DDC]">
+              {item.price} VND
+            </p>
+          </div>
+        ))}
       </div>
     </nav>
   );

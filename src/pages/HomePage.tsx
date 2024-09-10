@@ -1,7 +1,6 @@
-import BookNow from "../components/BookNow/BookNow";
 import Category from "../components/Category/Category";
 import Search from "../components/Search/Search";
-import Suggest from "../components/Suggest/Suggest";
+
 import WeeklyDeals from "../components/WeeklyDeals/WeeklyDeals";
 
 const HomePage = () => {
@@ -17,7 +16,7 @@ const HomePage = () => {
             autoPlay
             loop
             muted
-            className="w-[100%] h-[100%] absolute object-cover z-0 right-0 top-0 brightness-50"
+            className="w-[100%] h-[100%] absolute object-cover -z-2 right-0 top-0 brightness-50"
           >
             <source
               src="https://videos.pexels.com/video-files/3191291/3191291-uhd_2560_1440_25fps.mp4"
@@ -30,8 +29,6 @@ const HomePage = () => {
           </div>
         </div>
         <WeeklyDeals />
-        <BookNow />
-        <Suggest />
       </div>
     </>
   );
