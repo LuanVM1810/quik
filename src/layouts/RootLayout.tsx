@@ -7,9 +7,13 @@ const RootLayout = () => {
   const location = useLocation();
 
   return (
-    <div className="bg-[#edf0fe] -z-1 text-[#2C2C2C] h-auto px-4 pt-4 pb-8 overflow-x-hidden lg:px-8 lg:pt-6">
+    <div className="bg-[#edf0fe] -z-1 text-[#2C2C2C] h-auto px-4 py-4 overflow-x-hidden lg:px-8 lg:py-6">
       <header>
-        <RenderIf isTrue={location.pathname !== "/sign-in"}>
+        <RenderIf
+          isTrue={
+            location.pathname !== "/sign-in" && location.pathname !== "/sign-up"
+          }
+        >
           <nav>
             <Header />
           </nav>

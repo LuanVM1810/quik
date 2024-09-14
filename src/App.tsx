@@ -10,12 +10,14 @@ import RootLayout from "./layouts/RootLayout";
 import RoomDetail from "./components/RoomList/RoomDetail";
 import SpaceLayout from "./layouts/SpaceLayout";
 import SingIn from "./components/SingIn/SingIn";
+import SignUp from "./components/SignUp/SignUp";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
       <Route index element={<HomePage />} />
       <Route path="sign-in" element={<SingIn />} />
+      <Route path="sign-up" element={<SignUp />} />
       <Route path="allspace" element={<SpaceLayout />}>
         <Route index element={<AllSpace />} />
         <Route path=":roomId" element={<RoomDetail />} />

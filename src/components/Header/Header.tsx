@@ -85,15 +85,16 @@ const Header = () => {
 
       <div className="hidden lg:block ml-auto text-lg">
         <ul className="flex gap-32 font-semibold">
-          <NavLink to="/">
-            <li className="header-li">Trang chủ</li>
-          </NavLink>
+          <li className="header-li">
+            <NavLink to="/">Trang chủ</NavLink>
+          </li>
 
           <li className="header-li">Lịch sử giao dịch</li>
           <li className="header-li">Về chúng tôi</li>
-          <NavLink to="/sign-in">
-            <li className="ml-16 header-li">Hồ sơ</li>
-          </NavLink>
+
+          <li className="ml-16 header-li">
+            <NavLink to="/sign-in">Hồ sơ </NavLink>
+          </li>
         </ul>
       </div>
     </nav>
