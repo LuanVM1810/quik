@@ -6,4 +6,7 @@
     .btn-li {
       @apply bg-[#F9F9F9] text-[#939393] hover:bg-[#506DF7]  hover:cursor-pointer hover:text-white font-medium text-sm py-2 px-4 rounded-[8px] shadow-btn lg:text-base;
     }
+    .header-li {
+      @apply hover:opacity-80
+    }
   }

@@ -74,19 +74,26 @@ const Header = () => {
             <button className="bg-[#2c2c2c] hover:bg-gray-500 text-white px-4 py-2 rounded-3xl">
               Tham gia
             </button>
-            <button className="bg-white hover:bg-gray-500 border-solid border-[1px] px-4 py-2 rounded-3xl border-gray-600 text-[#2c2d2c]">
-              Đăng nhập
-            </button>
+            <NavLink to="/sign-in">
+              <button className="bg-white hover:bg-gray-500 border-solid border-[1px] px-4 py-2 rounded-3xl border-gray-600 text-[#2c2d2c]">
+                Đăng nhập
+              </button>
+            </NavLink>
           </div>
         </div>
       </div>
 
       <div className="hidden lg:block ml-auto text-lg">
         <ul className="flex gap-32 font-semibold">
-          <li>Trang chủ</li>
-          <li>Lịch sử giao dịch</li>
-          <li>Về chúng tôi</li>
-          <li className="ml-16">Hồ sơ</li>
+          <NavLink to="/">
+            <li className="header-li">Trang chủ</li>
+          </NavLink>
+
+          <li className="header-li">Lịch sử giao dịch</li>
+          <li className="header-li">Về chúng tôi</li>
+          <NavLink to="/sign-in">
+            <li className="ml-16 header-li">Hồ sơ</li>
+          </NavLink>
         </ul>
       </div>
     </nav>

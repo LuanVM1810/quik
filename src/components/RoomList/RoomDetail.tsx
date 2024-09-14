@@ -1,55 +1,40 @@
-import * as React from "react";
-import Dialog from "@mui/material/Dialog";
-import DialogActions from "@mui/material/DialogActions";
-import DialogContent from "@mui/material/DialogContent";
-import DialogTitle from "@mui/material/DialogTitle";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import { useTheme } from "@mui/material/styles";
+// import { useParams } from "react-router-dom";
 
-type Props = {
-  open: boolean;
-  handleClose: () => void;
-  roomId: string | undefined;
-};
-
-export default function RoomDetail({ open, handleClose, roomId }: Props) {
-  const theme = useTheme();
-  const fullScreen = useMediaQuery(theme.breakpoints.down("md"));
-
+export default function RoomDetail() {
+  // const roomId = useParams();
   return (
-    <React.Fragment>
-      <Dialog
-        fullScreen={fullScreen}
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="responsive-dialog-title"
-      >
-        <DialogTitle id="responsive-dialog-title">
-          Chi tiết phòng số: {roomId}
-        </DialogTitle>
-        <DialogContent>
+    <>
+      <div className="grid grid-cols-1 lg:grid-cols-2 text-[#111111]">
+        <div className="text-lg">
+          <p className="font-semibold">L'Mak Tower</p>
+          <p className="font-semibold">Không gian làm việc</p>
+          <p className="font-bold py-5">400.000 VND</p>
+        </div>
+        <div className="w-full flex justify-center items-center">
           <img
-            className="rounded-2xl"
-            src="https://s3-alpha-sig.figma.com/img/09a2/0737/d9c552ee0defebbecf4d4aa52437f2c7?Expires=1725840000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=NUlXysMlH48Qwj5moqR0a5LnGBDUNyv9JFtAxc45WgJUYJGKPOUisfZw06hNbu0hsCXMeejqUJcQp~NNV994x5EKQGPyyWo7FvP2NvyGYEsdaJYhSs8jbQ7jR1Ss19CNlSxYPXGQH9F~5XbjifawB54ctv7pQa-t8KxiiLgkRjhRKMliGNnqHVw9jN3zITLvHe9PKRjuNBtg3DweaG8dXUiWRFy2v79AWeYyXgt810WCAEPp25paijwglq7Q3eEdy1AmfowJ6JFyYRAG~BKHhXwWoRT~xCc342crfMtnIwXEUMCoZRyU~vaeQo4hLuK5ka8SC3EPohZdpB-htDFGvw__"
+            className="object-cover rounded-xl"
+            src="https://images.pexels.com/photos/2041627/pexels-photo-2041627.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
           />
-        </DialogContent>
-        <DialogActions>
-          <button
-            className="text-[#506DF7] px-4 py-2 border-2 border-[#506DF7] rounded-[8px]"
-            autoFocus
-            onClick={handleClose}
-          >
-            Đóng
-          </button>
-          <button
-            className="bg-[#506DF7] px-4 py-2 text-white rounded-[8px]"
-            onClick={handleClose}
-            autoFocus
-          >
+        </div>
+        <div className="lg:row-span-2 mt-5">
+          <button className="bg-[#506DF7] hover:opacity-80 py-2 rounded-3xl w-full font-medium text-base text-white">
             Đặt ngay
           </button>
-        </DialogActions>
-      </Dialog>
-    </React.Fragment>
+          <p className="py-5 text-left">
+            Responsive cushioning in the Pegasus provides an energised ride for
+            everyday road running. Experience lighter-weight energy return with
+            dual Air Zoom units and a ReactX foam midsole. Plus, improved
+            engineered mesh on the upper decreases weight and increases
+            breathability.
+          </p>
+
+          <ul className="list-disc pl-8">
+            <li>Colour Shown: White/Hyper Crimson/Pale Ivory/Armoury Navy</li>
+            <li>Style: HF4300-100</li>
+            <li>Country/Region of Origin: Vietnam</li>
+          </ul>
+        </div>
+      </div>
+    </>
   );
 }

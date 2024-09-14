@@ -4,14 +4,14 @@ import { roomList } from "../../constants";
 
 const WeeklyDeals = () => {
   return (
-    <nav className="flex flex-col gap-3 text-[#101010]">
-      <div className="flex items-center justify-between">
-        <span className="text-lg md:text-xl lg:text-2xl">Ưu đãi tuần này</span>
+    <nav className="flex flex-col gap-3 text-[#101010] mx-[-16px] lg:mx-[-32px]">
+      <div className="flex items-center justify-between px-4 lg:px-8">
+        <span className="text-lg md:text-xl lg:text-2xl ">Ưu đãi tuần này</span>
         <button className="text-sm md:text-base lg:text-lg text-[#4C4DDC] hover:opacity-50">
           Xem thêm
         </button>
       </div>
-      <div className="flex gap-5 overflow-x-auto pb-5">
+      <div className="flex gap-5 px-4 overflow-x-auto pb-5 lg:px-8">
         {roomList.map((item) => (
           <div className="bg-white shadow-room rounded-2xl min-w-[50%] h-[300px] md:h-[450px] lg:h-[500px]">
             <div className="relative w-full h-[60%] md:h-[65%] lg:h-[70%]">

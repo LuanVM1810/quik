@@ -9,7 +9,7 @@ export default {
       boxShadow: {
         'image': '0px 8px 5px grey',
         'room' : '0px 6px 16px #B4BCC91F',
-        'btn' : '0px 1px 4px #00000040',
+        'btn' : '0px 4px 4px #00000040',
       },
       colors: {
         "overlay": "#00000080",

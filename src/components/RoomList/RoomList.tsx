@@ -4,16 +4,12 @@ import { roomList } from "../../constants";
 import { FaRegHeart } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 
-type Props = {
-  handleClickOpen: () => void;
-};
-
-const RoomList = ({ handleClickOpen }: Props) => {
+const RoomList = () => {
   return (
     <>
       <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-5">
         {roomList.map((item) => (
-          <NavLink onClick={handleClickOpen} to={`${item.id}`}>
+          <NavLink to={`${item.id}`}>
             <div className="flex flex-col bg-white p-3 gap-[8px] rounded-2xl shadow-room cursor-pointer hover:-translate-y-2 transition-all duration-300">
               <div className="h-[150px] md:h-[200px] lg:h-[250px] relative">
                 <img className="rounded-xl h-full w-full" src={item.img} />
