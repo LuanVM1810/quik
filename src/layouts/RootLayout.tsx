@@ -11,7 +11,9 @@ const RootLayout = () => {
       <header>
         <RenderIf
           isTrue={
-            location.pathname !== "/sign-in" && location.pathname !== "/sign-up"
+            location.pathname !== "/sign-in" &&
+            location.pathname !== "/sign-up" &&
+            location.pathname !== "/forgot-password"
           }
         >
           <nav>

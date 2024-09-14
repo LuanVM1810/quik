@@ -53,11 +53,11 @@ const SingIn = () => {
           )}
         </div>
         <p className="text-white font-normal text-right hover:underline cursor-pointer">
-          Quên mật khẩu ?{" "}
+          <NavLink to="/forgot-password">Quên mật khẩu ? </NavLink>
         </p>
         <button
           onClick={onClickSignIn}
-          className="bg-[#0D6EFD] lg:w-[40%]  shadow-btn text-white font-extrabold py-4 px-2 rounded-xl transition-all duration-300 focus:shadow-none focus:scale-95"
+          className="bg-[#0D6EFD] lg:w-[40%] shadow-btn text-white font-extrabold py-4 px-2 rounded-xl transition-all duration-300 focus:shadow-none focus:scale-95"
         >
           Đăng nhập
         </button>
