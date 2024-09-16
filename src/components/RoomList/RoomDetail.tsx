@@ -42,7 +42,7 @@ export default function RoomDetail() {
           </ul>
         </div>
         <div className="my-5 lg:col-start-1">
-          <Accordion defaultExpanded sx={{ backgroundColor: "transparent" }}>
+          <Accordion sx={{ backgroundColor: "transparent" }}>
             <AccordionSummary
               expandIcon={<MdExpandMore size={"30px"} />}
               aria-controls="panel2-content"
@@ -81,7 +81,7 @@ export default function RoomDetail() {
               </div>
             </AccordionDetails>
           </Accordion>
-          <Accordion defaultExpanded sx={{ backgroundColor: "transparent" }}>
+          <Accordion sx={{ backgroundColor: "transparent" }}>
             <AccordionSummary
               expandIcon={<MdExpandMore size={"30px"} />}
               aria-controls="panel2-content"
