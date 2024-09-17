@@ -1,12 +1,25 @@
 import { useState } from "react";
+import { GoHome } from "react-icons/go";
 import { RiEyeCloseLine } from "react-icons/ri";
 import { RiEyeLine } from "react-icons/ri";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 const SignUp = () => {
   const [changeStatusPassword, setChangeStatusPassword] =
     useState<boolean>(false);
+  const navigate = useNavigate();
+  const moveHome = () => {
+    navigate("/");
+  };
   return (
     <div className="h-screen text-white bg-gradient-to-b from-[#42FCAC] via-[#36B2F0] to-[#506DF7] mx-[-16px] my-[-16px] lg:mx-[-32px] lg:my-[-24px]">
+      <div className="p-4">
+        <GoHome
+          onClick={moveHome}
+          className="bg-[#F7F7F9] p-1 rounded-full cursor-pointer shadow-btn hover:opacity-80 lg:hidden"
+          size={"30px"}
+          color="black"
+        />
+      </div>
       <div className="text-center pt-28 pb-10">
         <p className="font-bold text-[26px] lg:text-[34px]">Đăng ký</p>
         <p className="font-normal text-[16px] lg:text-[24px]">Tạo tài khoản</p>

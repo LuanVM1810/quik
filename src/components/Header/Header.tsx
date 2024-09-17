@@ -1,15 +1,25 @@
 import { useState } from "react";
 import { IoIosMenu } from "react-icons/io";
 import { IoCloseOutline } from "react-icons/io5";
-import { GoChevronRight } from "react-icons/go";
 import QuikLogo from "../../assets/Logo Official@3x.png";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [openMenu, setOpenMenu] = useState<boolean>(false);
+  const navigate = useNavigate();
 
   const clickOpenMenu = () => {
     setOpenMenu(!openMenu);
+  };
+
+  const goOrderHistory = () => {
+    navigate("/order-history");
+    setOpenMenu(false);
+  };
+
+  const goHome = () => {
+    navigate("/");
+    setOpenMenu(false);
   };
 
   return (
@@ -45,18 +55,23 @@ const Header = () => {
           className="ml-auto mb-4 hover:bg-gray-500 rounded-full cursor-pointer"
         />
         <ul className="font-bold text-xl flex flex-col gap-4">
-          <li className="flex items-center justify-between hover:text-gray-500 cursor-pointer">
-            Trang chủ <GoChevronRight size={"24px"} />
+          <li
+            onClick={goHome}
+            className="flex items-center justify-between hover:text-gray-500 cursor-pointer"
+          >
+            Trang chủ
           </li>
-          <li className="flex items-center justify-between hover:text-gray-500 cursor-pointer">
+          <li
+            onClick={goOrderHistory}
+            className="flex items-center justify-between hover:text-gray-500 cursor-pointer"
+          >
             Lịch sử giao dịch
-            <GoChevronRight size={"24px"} />
           </li>
           <li className="flex items-center justify-between hover:text-gray-500 cursor-pointer">
-            Về chúng tôi <GoChevronRight size={"24px"} />
+            Về chúng tôi
           </li>
           <li className="flex items-center justify-between hover:text-gray-500 cursor-pointer">
-            Hồ sơ <GoChevronRight size={"24px"} />
+            <NavLink to="/sign-in">Hồ sơ</NavLink>
           </li>
         </ul>
         <div className="my-20 cursor-pointer font-semibold">
@@ -71,9 +86,11 @@ const Header = () => {
             </span>
           </p>
           <div className="flex my-3 text-base font-bold gap-2 mt-[30px]">
-            <button className="bg-[#2c2c2c] hover:bg-gray-500 text-white px-4 py-2 rounded-3xl">
-              Tham gia
-            </button>
+            <NavLink to="/sign-up">
+              <button className="bg-[#2c2c2c] hover:bg-gray-500 text-white px-4 py-2 rounded-3xl">
+                Tham gia
+              </button>
+            </NavLink>
             <NavLink to="/sign-in">
               <button className="bg-white hover:bg-gray-500 border-solid border-[1px] px-4 py-2 rounded-3xl border-gray-600 text-[#2c2d2c]">
                 Đăng nhập
@@ -89,7 +106,9 @@ const Header = () => {
             <NavLink to="/">Trang chủ</NavLink>
           </li>
 
-          <li className="header-li">Lịch sử giao dịch</li>
+          <li className="header-li">
+            <NavLink to="/order-history">Lịch sử giao dịch</NavLink>
+          </li>
           <li className="header-li">Về chúng tôi</li>
 
           <li className="ml-16 header-li">

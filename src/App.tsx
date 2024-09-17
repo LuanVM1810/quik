@@ -12,6 +12,7 @@ import SpaceLayout from "./layouts/SpaceLayout";
 import SingIn from "./components/SingIn/SingIn";
 import SignUp from "./components/SignUp/SignUp";
 import ForgotPassword from "./components/SignUp/ForgotPassword";
+import OrderHistoryPage from "./pages/OrderHistoryPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -20,7 +21,7 @@ const router = createBrowserRouter(
       <Route path="sign-in" element={<SingIn />} />
       <Route path="forgot-password" element={<ForgotPassword />} />
       <Route path="sign-up" element={<SignUp />} />
-
+      <Route path="order-history" element={<OrderHistoryPage />} />
       <Route path="allspace" element={<SpaceLayout />}>
         <Route index element={<AllSpace />} />
         <Route path=":roomId" element={<RoomDetail />} />

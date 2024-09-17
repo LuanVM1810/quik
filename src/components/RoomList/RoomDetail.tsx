@@ -10,7 +10,7 @@ import { MdOutlineMeetingRoom } from "react-icons/md";
 export default function RoomDetail() {
   // const roomId = useParams();
   return (
-    <div className="text-[#111111] h-screen px-[150px]">
+    <div className="text-[#111111] h-screen lg:px-[150px]">
       <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-10">
         <div className="text-lg lg:row-span-1">
           <p className="font-semibold">L'Mak Tower</p>
@@ -103,7 +103,9 @@ export default function RoomDetail() {
                   <Rating value={4.5} precision={0.1} readOnly />
                   <p>4.5 Sao</p>
                 </div>
-                <button className="underline mb-[48px]">Write a Review</button>
+                <button className="border-b-2 border-black mb-[48px]">
+                  Write a Review
+                </button>
                 <div className="my-5">
                   <ul>
                     <li className="pb-[24px]">
@@ -128,7 +130,9 @@ export default function RoomDetail() {
                       </div>
                     </li>
                   </ul>
-                  <button className="underline">More Reviews</button>
+                  <button className="border-b-2 border-black">
+                    More Reviews
+                  </button>
                 </div>
               </>
             </AccordionDetails>
