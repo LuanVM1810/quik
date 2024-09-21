@@ -1,18 +1,15 @@
-import { useState } from "react";
+import { useContext } from "react";
 import { HiOutlineMenu } from "react-icons/hi";
 import { IoCloseOutline } from "react-icons/io5";
 import QuikLogo from "../../assets/Logo Official@3x.png";
 import { NavLink, useNavigate } from "react-router-dom";
 import { GoPerson } from "react-icons/go";
 import { CiHeart } from "react-icons/ci";
+import { openMenuMobileContext } from "../../context/OpenMenuMobileProvider";
 
 const Header = () => {
-  const [openMenu, setOpenMenu] = useState<boolean>(false);
+  const value = useContext(openMenuMobileContext);
   const navigate = useNavigate();
-
-  const clickOpenMenu = () => {
-    setOpenMenu(!openMenu);
-  };
 
   const onClickProfileAvatar = () => {
     navigate("/sign-in");
@@ -20,12 +17,12 @@ const Header = () => {
 
   const goOrderHistory = () => {
     navigate("/order-history");
-    setOpenMenu(false);
+    value?.setIsOpen(false);
   };
 
   const goHome = () => {
     navigate("/");
-    setOpenMenu(false);
+    value?.setIsOpen(false);
   };
 
   return (
@@ -45,24 +42,28 @@ const Header = () => {
 
         <HiOutlineMenu
           size={"24px"}
-          onClick={clickOpenMenu}
+          onClick={() => {
+            value?.setIsOpen(true);
+          }}
           className="ml-auto rounded-full cursor-pointer lg:hidden"
         />
       </div>
 
       <div
         className={`fixed top-0 left-0 w-[100%] h-[100%] ${
-          openMenu === true ? `block bg-overlay z-1` : `hidden -z-1`
+          value?.isOpen === true ? `block bg-overlay z-1` : `hidden -z-1`
         }transition-all duration-500 lg:hidden`}
       ></div>
       <div
         className={`fixed w-[85%] md:w-[50%] lg:hidden ${
-          openMenu === true ? `translate-x-0` : `translate-x-[100%]`
+          value?.isOpen === true ? `translate-x-0` : `translate-x-[100%]`
         }  top-0 right-0 bottom-0 bg-white
         transition-all duration-500 z-10 pl-8 pr-4 py-4 `}
       >
         <IoCloseOutline
-          onClick={clickOpenMenu}
+          onClick={() => {
+            value?.setIsOpen(false);
+          }}
           size={"30px"}
           className="ml-auto mb-4 hover:bg-gray-500 rounded-full cursor-pointer"
         />
