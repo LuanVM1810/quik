@@ -13,7 +13,8 @@ const RootLayout = () => {
           isTrue={
             location.pathname !== "/sign-in" &&
             location.pathname !== "/sign-up" &&
-            location.pathname !== "/forgot-password"
+            location.pathname !== "/forgot-password" &&
+            location.pathname !== "/signup-company"
           }
         >
           <nav>

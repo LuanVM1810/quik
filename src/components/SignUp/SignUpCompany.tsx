@@ -3,7 +3,7 @@ import { GoHome } from "react-icons/go";
 import { RiEyeCloseLine } from "react-icons/ri";
 import { RiEyeLine } from "react-icons/ri";
 import { NavLink, useNavigate } from "react-router-dom";
-const SignUp = () => {
+const SignUpCompany = () => {
   const [changeStatusPassword, setChangeStatusPassword] =
     useState<boolean>(false);
   const navigate = useNavigate();
@@ -20,16 +20,39 @@ const SignUp = () => {
           color="black"
         />
       </div>
-      <div className="text-center pt-28 pb-10">
+      <div className="text-center pb-10">
         <p className="font-bold text-[26px] lg:text-[34px]">Đăng ký</p>
         <p className="font-normal text-[16px] lg:text-[24px]">Tạo tài khoản</p>
       </div>
       <div className="flex flex-col justify-center lg:items-center gap-6 px-5 text-[#1B1E28] font-normal text-[16px] lg:text-[24px]">
         <input
+          placeholder="Tên quán"
+          className="px-2 py-4 lg:w-[40%] lg:px-4 rounded-xl outline-none transition-all duration-300 focus:scale-105 focus:translate-y-[-5px] focus:shadow-image"
+          type="text"
+        />
+        <input
+          placeholder="Địa chỉ kinh doanh"
+          className="px-2 py-4 lg:w-[40%] lg:px-4 rounded-xl outline-none transition-all duration-300 focus:scale-105 focus:translate-y-[-5px] focus:shadow-image"
+          type="text"
+        />
+        <input
+          placeholder="Số điện thoại"
+          className="px-2 py-4 lg:w-[40%] lg:px-4 rounded-xl outline-none transition-all duration-300 focus:scale-105 focus:translate-y-[-5px] focus:shadow-image"
+          type="text"
+        />
+        <input
           placeholder="Email"
           className="px-2 py-4 lg:w-[40%] lg:px-4 rounded-xl outline-none transition-all duration-300 focus:scale-105 focus:translate-y-[-5px] focus:shadow-image"
-          type="email"
+          type="text"
         />
+
+        <select className="px-2 py-4 lg:w-[40%] lg:px-4 rounded-xl outline-none transition-all duration-300">
+          <option>Không gian làm việc chung</option>
+          <option>Phòng họp</option>
+          <option>Study hub</option>
+          <option>Không gian văn phòng</option>
+          <option>Không gian sự kiện</option>
+        </select>
         <div className="relative lg:w-[40%]">
           <input
             placeholder="Mật khẩu"
@@ -62,19 +85,11 @@ const SignUp = () => {
         <button className="bg-[#0D6EFD] mt-6 lg:mt-10 lg:w-[40%] shadow-btn text-white font-extrabold py-4 px-2 rounded-xl transition-all duration-300 focus:shadow-none focus:scale-95">
           Đăng ký
         </button>
-        <div className="text-center text-white font-normal">
+        <div className="text-center text-white font-normal mb-10">
           Đã có tài khoản?
           <NavLink to="/sign-in">
             <span className="font-extrabold ml-2 cursor-pointer hover:underline">
               Đăng nhập
-            </span>
-          </NavLink>
-        </div>
-        <div className="text-center text-white font-normal mb-10">
-          Đăng kí tài khoản doanh nghiệp?
-          <NavLink to="/signup-company">
-            <span className="font-extrabold ml-2 cursor-pointer hover:underline">
-              Đăng ký doanh nghiệp
             </span>
           </NavLink>
         </div>
@@ -83,4 +98,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default SignUpCompany;

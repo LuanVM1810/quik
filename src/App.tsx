@@ -13,12 +13,14 @@ import SingIn from "./components/SingIn/SingIn";
 import SignUp from "./components/SignUp/SignUp";
 import ForgotPassword from "./components/SignUp/ForgotPassword";
 import OrderHistoryPage from "./pages/OrderHistoryPage";
+import SignUpCompany from "./components/SignUp/SignUpCompany";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
       <Route index element={<HomePage />} />
       <Route path="sign-in" element={<SingIn />} />
+      <Route path="signup-company" element={<SignUpCompany />} />
       <Route path="forgot-password" element={<ForgotPassword />} />
       <Route path="sign-up" element={<SignUp />} />
       <Route path="order-history" element={<OrderHistoryPage />} />
