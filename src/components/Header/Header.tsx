@@ -1,8 +1,10 @@
 import { useState } from "react";
-import { IoIosMenu } from "react-icons/io";
+import { HiOutlineMenu } from "react-icons/hi";
 import { IoCloseOutline } from "react-icons/io5";
 import QuikLogo from "../../assets/Logo Official@3x.png";
 import { NavLink, useNavigate } from "react-router-dom";
+import { GoPerson } from "react-icons/go";
+import { CiHeart } from "react-icons/ci";
 
 const Header = () => {
   const [openMenu, setOpenMenu] = useState<boolean>(false);
@@ -10,6 +12,10 @@ const Header = () => {
 
   const clickOpenMenu = () => {
     setOpenMenu(!openMenu);
+  };
+
+  const onClickProfileAvatar = () => {
+    navigate("/sign-in");
   };
 
   const goOrderHistory = () => {
@@ -32,12 +38,18 @@ const Header = () => {
           />
         </NavLink>
       </div>
+      <div className="ml-auto flex gap-6 lg:hidden">
+        <CiHeart size={"24px"} />
 
-      <IoIosMenu
-        size={"24px"}
-        onClick={clickOpenMenu}
-        className="ml-auto rounded-full cursor-pointer lg:hidden"
-      />
+        <GoPerson onClick={onClickProfileAvatar} size={"24px"} />
+
+        <HiOutlineMenu
+          size={"24px"}
+          onClick={clickOpenMenu}
+          className="ml-auto rounded-full cursor-pointer lg:hidden"
+        />
+      </div>
+
       <div
         className={`fixed top-0 left-0 w-[100%] h-[100%] ${
           openMenu === true ? `block bg-overlay z-1` : `hidden -z-1`
@@ -69,9 +81,6 @@ const Header = () => {
           </li>
           <li className="flex items-center justify-between hover:text-gray-500 cursor-pointer">
             Về chúng tôi
-          </li>
-          <li className="flex items-center justify-between hover:text-gray-500 cursor-pointer">
-            <NavLink to="/sign-in">Hồ sơ</NavLink>
           </li>
         </ul>
         <div className="my-20 cursor-pointer font-semibold">
