@@ -12,10 +12,15 @@ export default function RoomDetail() {
   return (
     <div className="text-[#111111] h-screen lg:px-[150px]">
       <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-10">
-        <div className="text-lg lg:row-span-1">
-          <p className="font-semibold">L'Mak Tower</p>
-          <p className="font-semibold">Không gian làm việc</p>
-          <p className="font-bold py-5">400.000 VND</p>
+        <div className="text-lg lg:row-span-1 lg:text-xl">
+          <div className="flex gap-2 items-center">
+            <p className="text-white font-semibold p-1 text-xs lg:text-sm rounded-md bg-[#506DF7]">
+              Không gian làm việc
+            </p>
+            <p className="font-semibold">L'Mak Tower</p>
+          </div>
+
+          <p className="font-bold py-5 text-[#506DF7]">400.000 VND</p>
         </div>
         <div className="w-full flex justify-center items-center lg:row-span-2">
           <img
@@ -28,11 +33,19 @@ export default function RoomDetail() {
             Đặt ngay
           </button>
           <p className="py-5 text-left">
-            Responsive cushioning in the Pegasus provides an energised ride for
-            everyday road running. Experience lighter-weight energy return with
-            dual Air Zoom units and a ReactX foam midsole. Plus, improved
-            engineered mesh on the upper decreases weight and increases
-            breathability.
+            Comfort: A comfortable working space is essential for maintaining
+            focus and productivity. This includes ergonomic furniture, proper
+            lighting, and suitable temperature control. Organization: An
+            organized workspace can help reduce distractions and improve
+            efficiency. It involves keeping essential tools, supplies, and
+            materials within reach and maintaining a clutter-free environment.
+            Inspiration: A well-designed workspace can stimulate creativity and
+            innovation. Personalizing the space with inspiring decor, artwork,
+            or plants can help create a conducive atmosphere for work.
+            Technology: In today's digital age, integrating the right technology
+            into a workspace is crucial. This may include computers, software
+            tools, communication devices, and other tech solutions that
+            streamline tasks and improve workflow.
           </p>
 
           <ul className="list-disc pl-8">
