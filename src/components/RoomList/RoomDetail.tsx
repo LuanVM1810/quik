@@ -19,7 +19,6 @@ export default function RoomDetail() {
             </p>
             <p className="font-semibold">L'Mak Tower</p>
           </div>
-
           <p className="font-bold py-5 text-[#506DF7]">400.000 VND</p>
         </div>
         <div className="w-full flex justify-center items-center lg:row-span-2">

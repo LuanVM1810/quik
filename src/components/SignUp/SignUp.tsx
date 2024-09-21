@@ -20,7 +20,7 @@ const SignUp = () => {
           color="black"
         />
       </div>
-      <div className="text-center pt-28 pb-10">
+      <div className="text-center  pb-10">
         <p className="font-bold text-[26px] lg:text-[34px]">Đăng ký</p>
         <p className="font-normal text-[16px] lg:text-[24px]">Tạo tài khoản</p>
       </div>
