@@ -53,7 +53,7 @@ const ImageSlider = () => {
               currentIndex === index && `text-[#506DF7]`
             } text-2xl cursor-pointer`}
           >
-            <RxDotFilled />
+            <RxDotFilled key={slide.url} />
           </div>
         ))}
       </div>
