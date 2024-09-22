@@ -52,30 +52,30 @@ export default function RoomDetail() {
           />
         </div>
         <div className="mt-5 lg:row-start-2">
-          <div className="flex gap-5 mb-5 items-center">
-            <p className="flex gap-2">
+          <div className="flex gap-5 pt-[8px] mb-5 items-center">
+            <p className="flex">
               <FaDoorOpen size={"30px"} />
             </p>
             <TextField
-              className="w-[270px] lg:w-[49%]"
+              className="w-[270px] pt-[8px] lg:w-[49%]"
               value={numberRoom}
               onChange={onChangeNumberRoom}
-              label="Phòng"
+              label="Số lượng phòng"
               placeholder="Chỉ nhập số"
               size="medium"
               type="number"
               required
             />
           </div>
-          <div className="flex gap-5 mb-5 items-center">
-            <p className="flex gap-2">
+          <div className="flex gap-5 pt-[8px] mb-5 items-center">
+            <p className="flex">
               <GoPeople size={"30px"} />
             </p>
             <TextField
-              className="w-[270px] lg:w-[49%]"
+              className="w-[270px]  lg:w-[49%]"
               value={numberPeople}
               onChange={onChangeNumberPeople}
-              label="Người"
+              label="Số lượng người"
               placeholder="Chỉ nhập số"
               size="medium"
               required
@@ -83,12 +83,9 @@ export default function RoomDetail() {
             />
           </div>
           <div className="mb-5 flex gap-5 items-center">
-            <div>
-              <p className="flex items-center gap-2">
-                <CiClock2 size={"30px"} />
-              </p>
-            </div>
-
+            <p className="flex items-center">
+              <CiClock2 size={"30px"} />
+            </p>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               <DemoContainer components={["DateTimePicker", "DateTimePicker"]}>
                 <DateTimePicker
@@ -99,6 +96,7 @@ export default function RoomDetail() {
               </DemoContainer>
             </LocalizationProvider>
           </div>
+
           <button className="bg-[#506DF7] hover:opacity-80 py-2 rounded-3xl w-full font-medium text-base text-white">
             Đặt ngay
           </button>
