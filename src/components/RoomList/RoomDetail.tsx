@@ -101,26 +101,15 @@ export default function RoomDetail() {
             Đặt ngay
           </button>
           <p className="py-5 text-left">
-            Comfort: A comfortable working space is essential for maintaining
-            focus and productivity. This includes ergonomic furniture, proper
-            lighting, and suitable temperature control. Organization: An
-            organized workspace can help reduce distractions and improve
-            efficiency. It involves keeping essential tools, supplies, and
-            materials within reach and maintaining a clutter-free environment.
-            Inspiration: A well-designed workspace can stimulate creativity and
-            innovation. Personalizing the space with inspiring decor, artwork,
-            or plants can help create a conducive atmosphere for work.
-            Technology: In today's digital age, integrating the right technology
-            into a workspace is crucial. This may include computers, software
-            tools, communication devices, and other tech solutions that
-            streamline tasks and improve workflow.
+            Căn phòng này là một không gian hiện đại và ấm áp. Sự kết hợp giữa
+            tông màu trắng và nâu tạo nên cảm giác thoáng đãng và ấm cúng. Ánh
+            sáng tự nhiên từ cửa sổ lớn chiếu vào phòng, làm tôn lên vẻ đẹp của
+            các đồ nội thất. Trên sàn nhà lát gạch men trắng sáng, tạo cảm giác
+            sạch sẽ và sang trọng. Một bức tranh trừu tượng treo trên bức tường
+            trắng, tạo điểm nhấn nghệ thuật cho căn phòng. Ghế sofa màu nâu êm
+            ái được bố trí gần cửa sổ, tạo không gian thư giãn lý tưởng để đọc
+            sách hoặc thưởng ngoạn phong cảnh bên ngoài.
           </p>
-
-          <ul className="list-disc pl-8">
-            <li>Colour Shown: White/Hyper Crimson/Pale Ivory/Armoury Navy</li>
-            <li>Style: HF4300-100</li>
-            <li>Country/Region of Origin: Vietnam</li>
-          </ul>
         </div>
         <div className="my-5 lg:col-start-1">
           <Accordion sx={{ backgroundColor: "transparent", boxShadow: "none" }}>
