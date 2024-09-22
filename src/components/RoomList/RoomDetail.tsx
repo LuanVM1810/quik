@@ -35,7 +35,7 @@ export default function RoomDetail() {
   };
   return (
     <div className="text-[#111111] h-screen lg:px-[150px]">
-      <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-10">
+      <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-x-10">
         <div className="text-lg lg:row-span-1 lg:text-xl">
           <div className="flex gap-2 items-center">
             <p className="text-white font-semibold p-1 text-xs lg:text-sm rounded-md bg-[#506DF7]">
@@ -45,7 +45,7 @@ export default function RoomDetail() {
           </div>
           <p className="font-bold py-5 text-[#506DF7]">400.000 VND</p>
         </div>
-        <div className="w-full flex flex-col justify-center items-center lg:row-span-2">
+        <div className="w-full flex flex-col justify-center items-center lg:row-span-2 lg:col-span-2 lg:justify-start">
           <img
             className="object-cover rounded-xl"
             src="https://images.pexels.com/photos/2041627/pexels-photo-2041627.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
@@ -57,7 +57,7 @@ export default function RoomDetail() {
               <FaDoorOpen size={"30px"} />
             </p>
             <TextField
-              className="w-[270px] pt-[8px] lg:w-[49%]"
+              className="w-[270px]"
               value={numberRoom}
               onChange={onChangeNumberRoom}
               label="Số lượng phòng"
@@ -72,7 +72,7 @@ export default function RoomDetail() {
               <GoPeople size={"30px"} />
             </p>
             <TextField
-              className="w-[270px]  lg:w-[49%]"
+              className="w-[270px]"
               value={numberPeople}
               onChange={onChangeNumberPeople}
               label="Số lượng người"
