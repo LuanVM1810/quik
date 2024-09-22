@@ -57,7 +57,7 @@ export default function RoomDetail() {
               <FaDoorOpen size={"30px"} />
             </p>
             <TextField
-              className="w-[79%] lg:w-[49%]"
+              className="w-[270px] lg:w-[49%]"
               value={numberRoom}
               onChange={onChangeNumberRoom}
               label="Phòng"
@@ -72,7 +72,7 @@ export default function RoomDetail() {
               <GoPeople size={"30px"} />
             </p>
             <TextField
-              className="w-[79%] lg:w-[49%]"
+              className="w-[270px] lg:w-[49%]"
               value={numberPeople}
               onChange={onChangeNumberPeople}
               label="Người"
