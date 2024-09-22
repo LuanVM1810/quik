@@ -1,10 +1,26 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { slider } from "../../constants";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import { RxDotFilled } from "react-icons/rx";
 
-const ImageSlider = () => {
-  const [currentIndex, setCurrentIndex] = useState(1);
+type Props = {
+  autoSlide: boolean;
+};
+
+const ImageSlider = ({ autoSlide }: Props) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    if (autoSlide === true) {
+      setTimeout(() => {
+        const isLastSlide = currentIndex === slider.length - 1;
+        const newIndex = isLastSlide ? 0 : currentIndex + 1;
+        setCurrentIndex(newIndex);
+      }, 2500);
+    } else {
+      return () => {};
+    }
+  }, [currentIndex, autoSlide]);
 
   const prevSilde = () => {
     const isFirstSlide = currentIndex === 0;
