@@ -1,4 +1,5 @@
 import Category from "../components/Category/Category";
+import ImageSlider from "../components/ImageSlider/ImageSlider";
 import Search from "../components/Search/Search";
 
 import WeeklyDeals from "../components/WeeklyDeals/WeeklyDeals";
@@ -28,6 +29,7 @@ const HomePage = () => {
             <p>Có Quik lo</p>
           </div>
         </div>
+        <ImageSlider />
         <WeeklyDeals />
       </div>
     </>
