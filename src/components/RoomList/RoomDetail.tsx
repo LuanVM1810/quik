@@ -15,6 +15,7 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DateTimePicker } from "@mui/x-date-pickers/DateTimePicker";
 import { CiClock2 } from "react-icons/ci";
+import ImageSlider from "../ImageSlider/ImageSlider";
 
 export default function RoomDetail() {
   const [numberRoom, setNumberRoom] = useState<number | null>(null);
@@ -45,11 +46,8 @@ export default function RoomDetail() {
           </div>
           <p className="font-bold py-5 text-[#506DF7]">400.000 VND</p>
         </div>
-        <div className="w-full flex flex-col justify-center items-center lg:row-span-2 lg:col-span-2 lg:justify-start">
-          <img
-            className="object-cover rounded-xl"
-            src="https://images.pexels.com/photos/2041627/pexels-photo-2041627.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          />
+        <div className="w-full lg:row-span-2 lg:col-span-2 lg:justify-start">
+          <ImageSlider />
         </div>
         <div className="mt-5 lg:row-start-2">
           <div className="flex gap-5 pt-[8px] mb-5 items-center">
