@@ -3,12 +3,36 @@ import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import { MdExpandMore } from "react-icons/md";
-import { Divider, Rating } from "@mui/material";
-import { GoPeople } from "react-icons/go";
+import { Divider, Rating, TextField } from "@mui/material";
 import { MdOutlineMeetingRoom } from "react-icons/md";
+import { FaDoorOpen } from "react-icons/fa";
+import { GoPeople } from "react-icons/go";
+import { useState } from "react";
+import * as React from "react";
+import { Dayjs } from "dayjs";
+import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { DateTimePicker } from "@mui/x-date-pickers/DateTimePicker";
+import { CiClock2 } from "react-icons/ci";
 
 export default function RoomDetail() {
+  const [numberRoom, setNumberRoom] = useState<number | null>(null);
+  const [numberPeople, setNumberPeople] = useState<number | null>(null);
+  const [date, setDate] = React.useState<Dayjs | null>(null);
   // const roomId = useParams();
+
+  const onChangeNumberRoom = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setNumberRoom(parseInt(e.target.value));
+  };
+
+  const onChangeNumberPeople = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setNumberPeople(parseInt(e.target.value));
+  };
   return (
     <div className="text-[#111111] h-screen lg:px-[150px]">
       <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-10">
@@ -21,13 +45,60 @@ export default function RoomDetail() {
           </div>
           <p className="font-bold py-5 text-[#506DF7]">400.000 VND</p>
         </div>
-        <div className="w-full flex justify-center items-center lg:row-span-2">
+        <div className="w-full flex flex-col justify-center items-center lg:row-span-2">
           <img
             className="object-cover rounded-xl"
             src="https://images.pexels.com/photos/2041627/pexels-photo-2041627.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
           />
         </div>
         <div className="mt-5 lg:row-start-2">
+          <div className="flex gap-5 mb-5 items-center">
+            <p className="flex gap-2">
+              <FaDoorOpen size={"30px"} />
+            </p>
+            <TextField
+              className="w-[79%] lg:w-[49%]"
+              value={numberRoom}
+              onChange={onChangeNumberRoom}
+              label="Phòng"
+              placeholder="Chỉ nhập số"
+              size="medium"
+              type="number"
+              required
+            />
+          </div>
+          <div className="flex gap-5 mb-5 items-center">
+            <p className="flex gap-2">
+              <GoPeople size={"30px"} />
+            </p>
+            <TextField
+              className="w-[79%] lg:w-[49%]"
+              value={numberPeople}
+              onChange={onChangeNumberPeople}
+              label="Người"
+              placeholder="Chỉ nhập số"
+              size="medium"
+              required
+              type="number"
+            />
+          </div>
+          <div className="mb-5 flex gap-5 items-center">
+            <div>
+              <p className="flex items-center gap-2">
+                <CiClock2 size={"30px"} />
+              </p>
+            </div>
+
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+              <DemoContainer components={["DateTimePicker", "DateTimePicker"]}>
+                <DateTimePicker
+                  label="Chọn ngày và giờ"
+                  value={date}
+                  onChange={(newValue) => setDate(newValue)}
+                />
+              </DemoContainer>
+            </LocalizationProvider>
+          </div>
           <button className="bg-[#506DF7] hover:opacity-80 py-2 rounded-3xl w-full font-medium text-base text-white">
             Đặt ngay
           </button>
