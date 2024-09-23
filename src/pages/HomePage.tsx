@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import Category from "../components/Category/Category";
 import ImageSlider from "../components/ImageSlider/ImageSlider";
 import Search from "../components/Search/Search";
@@ -27,9 +28,11 @@ const HomePage = () => {
           <div className="absolute text-white">
             <p className=" animate-bounce">Book phòng khó </p>
             <p className="animate-bounce">Có Quik lo</p>
-            <button className="mt-8 px-6 py-2 border-2 outline-none rounded-2xl border-white hover:bg-white hover:text-[#506DF7] transition-all duration-300">
-              Book ngay
-            </button>
+            <NavLink to="/allspace">
+              <button className="mt-8 px-6 py-2 border-2 outline-none rounded-2xl border-white hover:bg-white hover:text-[#506DF7] transition-all duration-300">
+                Book ngay
+              </button>
+            </NavLink>
           </div>
         </div>
         <ImageSlider autoSlide={true} />

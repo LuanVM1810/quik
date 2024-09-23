@@ -22,7 +22,7 @@ export default function RoomDetail() {
   const [numberPeople, setNumberPeople] = useState<number | null>(null);
   const [date, setDate] = React.useState<Dayjs | null>(null);
   // const roomId = useParams();
-
+  console.log(date);
   const onChangeNumberRoom = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
