@@ -122,7 +122,7 @@ const Header = () => {
           <li className="header-li">Về chúng tôi</li>
 
           <li className="ml-16 header-li">
-            <NavLink to="/sign-in">Hồ sơ </NavLink>
+            <NavLink to="/profile">Hồ sơ </NavLink>
           </li>
         </ul>
       </div>
