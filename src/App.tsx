@@ -14,6 +14,7 @@ import SignUp from "./components/SignUp/SignUp";
 import ForgotPassword from "./components/SignUp/ForgotPassword";
 import OrderHistoryPage from "./pages/OrderHistoryPage";
 import SignUpCompany from "./components/SignUp/SignUpCompany";
+import Profile from "./components/Profile/Profile";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -28,6 +29,7 @@ const router = createBrowserRouter(
         <Route index element={<AllSpace />} />
         <Route path=":roomId" element={<RoomDetail />} />
       </Route>
+      <Route path="profile" element={<Profile />} />
     </Route>
   )
 );

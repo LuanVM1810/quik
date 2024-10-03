@@ -36,7 +36,7 @@ export default function RoomDetail() {
   };
   return (
     <div className="text-[#111111] h-screen lg:px-[150px]">
-      <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-x-10">
+      <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-x-5">
         <div className="text-lg lg:row-span-1 lg:text-xl">
           <div className="flex gap-2 items-center">
             <p className="text-white font-semibold p-1 text-xs lg:text-sm rounded-md bg-[#506DF7]">

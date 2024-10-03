@@ -12,7 +12,7 @@ const Header = () => {
   const navigate = useNavigate();
 
   const onClickProfileAvatar = () => {
-    navigate("/sign-in");
+    navigate("/profile");
   };
 
   const goOrderHistory = () => {

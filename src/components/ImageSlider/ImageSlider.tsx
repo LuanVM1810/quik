@@ -17,8 +17,6 @@ const ImageSlider = ({ autoSlide }: Props) => {
         const newIndex = isLastSlide ? 0 : currentIndex + 1;
         setCurrentIndex(newIndex);
       }, 2500);
-    } else {
-      return () => {};
     }
   }, [currentIndex, autoSlide]);
 
@@ -58,15 +56,15 @@ const ImageSlider = ({ autoSlide }: Props) => {
       >
         <BsChevronCompactRight size={30} />
       </div>
-      <div className="flex top-4 justify-center py-2">
-        {slider.map((slide, index) => (
+      <div className={`flex top-4 justify-center py-2`}>
+        {slider.map((slide) => (
           <div
-            key={index}
+            key={slide.id}
             onClick={() => {
-              gotoSlide(index);
+              gotoSlide(slide.id);
             }}
             className={` ${
-              currentIndex === index && `text-[#506DF7]`
+              currentIndex === slide.id && `text-[#506DF7]`
             } text-2xl cursor-pointer`}
           >
             <RxDotFilled key={slide.url} />
