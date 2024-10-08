@@ -155,7 +155,7 @@ export default function RoomDetail() {
               aria-controls="panel2-content"
               id="panel2-header"
             >
-              <p className="text-[20px] flex items-center gap-10 lg:gap-[50px]">
+              <p className="text-[20px] flex items-center gap-10 lg:gap-[40px]">
                 Đánh giá (2)
                 <Rating
                   sx={{ marginLeft: "auto" }}

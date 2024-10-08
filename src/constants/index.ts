@@ -1,3 +1,10 @@
+import image1 from "../assets/3daca0b81ac0a39efad1.jpg";
+import image2 from "../assets/52fc2da17756d1088847.jpg";
+import image3 from "../assets/92f310e7aa9f13c14a8e.jpg";
+import image4 from "../assets/9e2240cb123cb462ed2d.jpg";
+import image5 from "../assets/d10a140f45f8e3a6bae9.jpg";
+import image6 from "../assets/d20da92ffdd85b8602c9.jpg";
+
 export const roomList = [
   {
     id: 1,
@@ -52,26 +59,26 @@ export const roomList = [
 export const slider = [
   {
     id: 0,
-    url: "https://images.pexels.com/photos/1181533/pexels-photo-1181533.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    url: image1,
   },
   {
     id: 1,
-    url: "https://images.pexels.com/photos/275484/pexels-photo-275484.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    url: image2,
   },
   {
     id: 2,
-    url: "https://images.pexels.com/photos/2566581/pexels-photo-2566581.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    url: image3,
   },
   {
     id: 3,
-    url: "https://images.pexels.com/photos/416405/pexels-photo-416405.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    url: image4,
   },
   {
     id: 4,
-    url: "https://images.pexels.com/photos/159213/hall-congress-architecture-building-159213.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    url: image5,
   },
   {
     id: 5,
-    url: "https://images.pexels.com/photos/380768/pexels-photo-380768.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    url: image6,
   },
 ];
