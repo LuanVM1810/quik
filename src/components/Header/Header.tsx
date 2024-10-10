@@ -121,15 +121,15 @@ const Header = () => {
           </li>
           <li className="header-li">Về chúng tôi</li>
 
-          <li className="ml-10 header-li">
+          <li className="ml-10">
             <div className="flex text-base font-bold gap-2">
               <NavLink to="/sign-up">
-                <button className="bg-[#2c2c2c] hover:bg-gray-500 text-white px-4 py-2 rounded-3xl">
+                <button className="bg-[#506DF7] text-white hover:bg-white hover:text-[#506DF7] hover:shadow-btn hover:scale-110 px-4 py-2 rounded-3xl transition-all duration-300">
                   Tham gia
                 </button>
               </NavLink>
               <NavLink to="/sign-in">
-                <button className="bg-white hover:bg-gray-500 border-solid border-[1px] px-4 py-2 rounded-3xl border-gray-600 text-[#2c2d2c]">
+                <button className="bg-white hover:bg-[#506DF7] hover:scale-110 hover:text-white border-solid border-[1px] px-4 py-2 rounded-3xl border-[#506DF7] text-[#506DF7] transition-all duration-300">
                   Đăng nhập
                 </button>
               </NavLink>
