@@ -36,7 +36,7 @@ const HomePage = () => {
             </NavLink>
           </div>
         </div>
-        <ImageSlider autoSlide={true} />
+        <ImageSlider autoSlide={true} autoSlideInterval={2500} />
         <WeeklyDeals />
       </div>
     </>

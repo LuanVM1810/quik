@@ -47,7 +47,7 @@ export default function RoomDetail() {
           <p className="font-bold py-5 text-[#506DF7]">400.000 VND</p>
         </div>
         <div className="w-full lg:row-span-2 lg:col-span-2 lg:justify-start">
-          <ImageSlider autoSlide={false} />
+          <ImageSlider autoSlide={true} autoSlideInterval={2500} />
         </div>
         <div className="mt-5 lg:row-start-2">
           <div className="flex gap-5 pt-[8px] mb-5 items-center">

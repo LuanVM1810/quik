@@ -5,32 +5,28 @@ import { RxDotFilled } from "react-icons/rx";
 
 type Props = {
   autoSlide: boolean;
+  autoSlideInterval: number;
 };
 
-const ImageSlider = ({ autoSlide }: Props) => {
+const ImageSlider = ({ autoSlide, autoSlideInterval }: Props) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  useEffect(() => {
-    if (autoSlide === true) {
-      setTimeout(() => {
-        const isLastSlide = currentIndex === slider.length - 1;
-        const newIndex = isLastSlide ? 0 : currentIndex + 1;
-        setCurrentIndex(newIndex);
-      }, 2500);
-    }
-  }, [currentIndex, autoSlide]);
-
   const prevSilde = () => {
-    const isFirstSlide = currentIndex === 0;
-    const newIndex = isFirstSlide ? slider.length - 1 : currentIndex - 1;
-    setCurrentIndex(newIndex);
+    setCurrentIndex((currentIndex) =>
+      currentIndex === 0 ? slider.length - 1 : currentIndex - 1
+    );
   };
 
   const nextSlide = () => {
-    const isLastSlide = currentIndex === slider.length - 1;
-    const newIndex = isLastSlide ? 0 : currentIndex + 1;
-    setCurrentIndex(newIndex);
+    setCurrentIndex((currentIndex) =>
+      currentIndex === slider.length - 1 ? 0 : currentIndex + 1
+    );
   };
+  useEffect(() => {
+    if (!autoSlide) return;
+    const slideInterval = setInterval(nextSlide, autoSlideInterval);
+    return () => clearInterval(slideInterval);
+  }, []);
 
   const gotoSlide = (slideIndex: number) => {
     setCurrentIndex(slideIndex);
