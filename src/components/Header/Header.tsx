@@ -26,7 +26,7 @@ const Header = () => {
   };
 
   return (
-    <nav className="flex items-center">
+    <nav className="fixed z-[2] w-[100%] top-0 left-0 py-4 px-4 shadow-btn bg-white flex items-center">
       <div>
         <NavLink to="/">
           <img
