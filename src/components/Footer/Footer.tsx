@@ -1,7 +1,7 @@
 import { Divider } from "@mui/material";
 import Logo from "../../assets/Logo Official.png";
 import FacebookIcon from "../../assets/facebook.png";
-import TikTokIcon from "../../assets/tiktok.png";
+import ThreadsIcon from "../../assets/threads.png";
 
 const Footer = () => {
   return (
@@ -11,14 +11,13 @@ const Footer = () => {
         <div className="flex flex-col gap-5">
           <img src={Logo} width={64} height={64} />
           <div>
-            Chào mừng bạn đến với nền tảng của chúng tôi, nơi mà những cá nhân
-            trẻ đồng điệu kết nối dựa trên tính cách thông qua các phương pháp
-            hấp dẫn như MBTI, cung hoàng đạo và thần số học. Chúng tôi không chỉ
-            tạo điều kiện cho những kết nối này mà còn cung cấp các dịch vụ tiện
-            ích như hỗ trợ chuyển nhà, đóng gói đồ đạc, tìm kiếm nhà ở, bảo trì
-            và dọn dẹp để đảm bảo một trải nghiệm sống chung mượt mà và thoải
-            mái cho mọi người. Hãy tham gia cùng chúng tôi trong một không gian
-            được thiết kế cho các cuộc họp và tọa đàm hài hòa.
+            Trên trang web đặt phòng họp, bạn sẽ tìm thấy một không gian trực
+            tuyến linh hoạt và tiện lợi, cho phép bạn dễ dàng chọn lựa phòng họp
+            phù hợp với nhu cầu của mình. Giao diện trang web được thiết kế đẹp
+            mắt và dễ sử dụng, cung cấp thông tin chi tiết về các phòng họp, bao
+            gồm kích thước, tiện nghi, và giá cả. Đặt phòng họp trở nên đơn giản
+            chỉ trong vài bước với trải nghiệm mượt mà và thuận tiện trên mọi
+            thiết bị di động.
           </div>
         </div>
         <div className="leading-8">
@@ -60,8 +59,8 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <a href="">
-                <img src={TikTokIcon} alt="Tiktok" width={32} height={32} />
+              <a target="_blank" href="https://www.threads.net/@quik.vietnam">
+                <img src={ThreadsIcon} alt="Threads" width={32} height={32} />
               </a>
             </li>
           </ul>
