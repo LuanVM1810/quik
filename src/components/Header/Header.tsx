@@ -111,7 +111,7 @@ const Header = () => {
       </div>
 
       <div className="hidden lg:block ml-auto text-lg">
-        <ul className="flex gap-32 font-semibold">
+        <ul className="flex gap-24 font-semibold items-center">
           <li className="header-li">
             <NavLink to="/">Trang chủ</NavLink>
           </li>
@@ -121,8 +121,20 @@ const Header = () => {
           </li>
           <li className="header-li">Về chúng tôi</li>
 
-          <li className="ml-16 header-li">
-            <NavLink to="/profile">Hồ sơ </NavLink>
+          <li className="ml-10 header-li">
+            <div className="flex text-base font-bold gap-2">
+              <NavLink to="/sign-up">
+                <button className="bg-[#2c2c2c] hover:bg-gray-500 text-white px-4 py-2 rounded-3xl">
+                  Tham gia
+                </button>
+              </NavLink>
+              <NavLink to="/sign-in">
+                <button className="bg-white hover:bg-gray-500 border-solid border-[1px] px-4 py-2 rounded-3xl border-gray-600 text-[#2c2d2c]">
+                  Đăng nhập
+                </button>
+              </NavLink>
+            </div>
+            {/* <NavLink to="/profile">Hồ sơ </NavLink> */}
           </li>
         </ul>
       </div>
