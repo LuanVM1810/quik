@@ -3,23 +3,9 @@ import Category from "../components/Category/Category";
 import ImageSlider from "../components/ImageSlider/ImageSlider";
 import Search from "../components/Search/Search";
 import { FaRegHandPointDown } from "react-icons/fa6";
-
 import WeeklyDeals from "../components/WeeklyDeals/WeeklyDeals";
-import { useEffect } from "react";
-import WorkingSpaceApi from "../services/WorkingSpaceApi";
 
 const HomePage = () => {
-  useEffect(() => {
-    const getAllWorkingSpace = async () => {
-      try {
-        const workingSpaceList = await WorkingSpaceApi.getAll();
-        console.log(workingSpaceList);
-      } catch (e) {
-        console.log("Error fetch data", e);
-      }
-    };
-    getAllWorkingSpace();
-  }, []);
   return (
     <>
       <div className="flex flex-col gap-5 lg:gap-10">

@@ -1,23 +1,17 @@
-import axios, { AxiosError } from "axios";
+import axios from "axios";
 // import { isEmpty } from "lodash";
 
 const axiosClient = axios.create({
-  baseURL: "http://localhost:5065/api",
+  baseURL: "https://localhost:7204/api",
   headers: {
     "Content-Type": "application/json",
   },
 });
 
+// Add a request interceptor
 axiosClient.interceptors.request.use(
   function (config) {
-    // const token = localStorage.getItem("jwtToken");
     // Do something before request is sent
-    // if (token !== undefined) {
-    //   // console.log("Token: ", token);
-    //   if (config.headers) {
-    //     config.headers["Authorization"] = `Bearer ${token}`;
-    //   }
-    // }
     return config;
   },
   function (error) {
@@ -25,12 +19,18 @@ axiosClient.interceptors.request.use(
     return Promise.reject(error);
   }
 );
+
+// Add a response interceptor
 axiosClient.interceptors.response.use(
-  (response) => {
-    return response.data;
+  function (response) {
+    // Any status code that lie within the range of 2xx cause this function to trigger
+    // Do something with response data
+    return response;
   },
-  (error: AxiosError<{ content: string }>) => {
-    return error.response?.data;
+  function (error) {
+    // Any status codes that falls outside the range of 2xx cause this function to trigger
+    // Do something with response error
+    return Promise.reject(error);
   }
 );
 

@@ -5,6 +5,7 @@ import RenderIf from "../components/RenderIf/RenderIf";
 import { useContext } from "react";
 import { openMenuMobileContext } from "../context/OpenMenuMobileProvider";
 import ScrollToTop from "../components/ScrollToTop/ScrollToTop";
+import Footer from "../components/Footer/Footer";
 
 const RootLayout = () => {
   const location = useLocation();
@@ -35,6 +36,9 @@ const RootLayout = () => {
       <main>
         <Outlet />
       </main>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 };
