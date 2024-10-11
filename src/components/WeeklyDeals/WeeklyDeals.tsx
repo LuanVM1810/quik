@@ -4,7 +4,7 @@ import { roomList } from "../../constants";
 
 const WeeklyDeals = () => {
   return (
-    <nav className="flex flex-col gap-3 text-[#101010] mx-[-16px] lg:mx-[-32px]">
+    <nav className="flex flex-col gap-3 text-[#101010] mx-[-16px] lg:mx-[-32px] mb-10">
       <div className="flex items-center justify-between px-4 lg:px-8">
         <span className="text-lg md:text-xl lg:text-2xl ">Ưu đãi tuần này</span>
         <button className="text-sm md:text-base lg:text-lg text-[#4C4DDC] hover:opacity-50">

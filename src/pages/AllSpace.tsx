@@ -54,7 +54,7 @@ const AllSpace = () => {
     fetchData();
   }, []);
   return (
-    <div className="">
+    <div className="mb-10">
       {allspaces.loading ? (
         <Loading />
       ) : (
