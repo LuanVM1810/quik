@@ -32,7 +32,7 @@ const Header = () => {
       <div>
         <NavLink to="/">
           <img
-            className="relative font-bold text-4xl w-[280px] lg:w-[300px]"
+            className="relative font-bold text-4xl w-[90px]"
             src={QuikLogo}
           />
         </NavLink>
