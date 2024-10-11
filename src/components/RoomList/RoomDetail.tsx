@@ -98,7 +98,7 @@ export default function RoomDetail() {
           <button className="bg-[#506DF7] hover:opacity-80 py-2 rounded-3xl w-full font-medium text-base text-white">
             Đặt ngay
           </button>
-          <p className="py-5 text-left">
+          <p className="py-5 text-left leading-8">
             Căn phòng này là một không gian hiện đại và ấm áp. Sự kết hợp giữa
             tông màu trắng và nâu tạo nên cảm giác thoáng đãng và ấm cúng. Ánh
             sáng tự nhiên từ cửa sổ lớn chiếu vào phòng, làm tôn lên vẻ đẹp của

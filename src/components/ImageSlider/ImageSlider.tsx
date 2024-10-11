@@ -60,7 +60,8 @@ const ImageSlider = ({ autoSlide, autoSlideInterval }: Props) => {
               gotoSlide(slide.id);
             }}
             className={` ${
-              currentIndex === slide.id && `text-[#506DF7]`
+              currentIndex === slide.id &&
+              `text-quik-purple scale-150 transition-all duration-500`
             } text-2xl cursor-pointer`}
           >
             <RxDotFilled key={slide.url} />

@@ -13,6 +13,9 @@ export default {
       },
       colors: {
         "overlay": "#00000080",
+        "quik-purple": "#506df7",
+        "quik-green": "#42fcac",
+        "quik-blue": "#36b2f0",
       },
       keyframes: {
         rotate: {
