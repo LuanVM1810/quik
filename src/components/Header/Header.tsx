@@ -85,7 +85,7 @@ const Header = () => {
             Về chúng tôi
           </li>
         </ul>
-        <div className="my-20 cursor-pointer font-semibold">
+        <div className="my-20 cursor-pointer font-semibold w-[90px]">
           <img src={QuikLogo} />
         </div>
         <div className="text-gray-500 text-xl">

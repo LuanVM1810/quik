@@ -20,8 +20,8 @@ const HomePage = () => {
             />
           </video>
           <div className="absolute flex flex-col items-center text-white">
-            <p>Book phòng khó </p>
-            <p>Có Quik lo</p>
+            <p>MEET ĐÂU KHÔNG KHÓ </p>
+            <p>BOOK QUIK KHỎI LO</p>
             <FaRegHandPointDown size={35} className="mt-8 animate-bounce" />
             <NavLink to="/allspace">
               <button className="mt-4 px-6 py-2 border-2 outline-none rounded-2xl border-white hover:bg-white hover:text-[#506DF7] transition-all duration-300">

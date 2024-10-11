@@ -15,10 +15,12 @@ import ForgotPassword from "./components/SignUp/ForgotPassword";
 import OrderHistoryPage from "./pages/OrderHistoryPage";
 import SignUpCompany from "./components/SignUp/SignUpCompany";
 import Profile from "./components/Profile/Profile";
+import AboutUs from "./components/AboutUs/AboutUs";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
+      <Route path="about-us" element={<AboutUs />} />
       <Route index element={<HomePage />} />
       <Route path="sign-in" element={<SingIn />} />
       <Route path="signup-company" element={<SignUpCompany />} />

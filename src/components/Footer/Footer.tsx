@@ -5,6 +5,7 @@ import ThreadsIcon from "../../assets/threads.png";
 import { GrMapLocation } from "react-icons/gr";
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
+import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -28,7 +29,11 @@ const Footer = () => {
             Về chúng tôi
           </div>
           <ul>
-            <li>Giới thiệu</li>
+            <li>
+              {" "}
+              <NavLink to="/about-us">Giới thiệu </NavLink>
+            </li>
+
             <li>An toàn - Bảo mật</li>
             <li>Điều khoản - Điều lệ</li>
             <li>Chính sách quyền riêng tư</li>
