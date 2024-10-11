@@ -11,7 +11,7 @@ const Footer = () => {
     <div className="bg-white mx-[-16px] lg:mx-[-32px] mb-[-16px] px-4 lg:px-8 pb-4 text-[14px]">
       <Divider variant="fullWidth" sx={{ marginBottom: "40px" }} />
       <div className="flex gap-10 lg:gap-20 flex-row flex-wrap">
-        <div className="flex flex-col max-w-[400px]">
+        <div className="flex flex-col max-w-[300px]">
           <img src={Logo} width={64} height={64} />
           <div className="leading-8">
             Trên trang web đặt phòng họp, bạn sẽ tìm thấy một không gian trực
