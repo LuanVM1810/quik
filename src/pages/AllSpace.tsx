@@ -36,9 +36,9 @@ const AllSpace = () => {
   const [allspaces, allSpaceDispatch] = useReducer(allSpaceReducer, initState);
 
   useEffect(() => {
-    allSpaceDispatch({
-      type: "GET_ALLSPACE_REQUEST",
-    });
+    // allSpaceDispatch({
+    //   type: "GET_ALLSPACE_REQUEST",
+    // });
     const fetchData = async () => {
       try {
         const fetchWorkingSpace = await WorkingSpaceApi.getAll();
@@ -60,7 +60,7 @@ const AllSpace = () => {
       ) : (
         <div>
           <Search placeholder="Tìm kiếm" />
-          <RoomList roomList={allspaces.data} />
+          <RoomList />
         </div>
       )}
     </div>
