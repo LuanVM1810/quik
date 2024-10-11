@@ -24,7 +24,7 @@ const WeeklyDeals = () => {
               </span>
             </div>
             <div className="px-2 flex flex-col gap-1">
-              <p className="pt-2 font-medium md:text-lg lg:text-xl animate-pulse">
+              <p className="pt-2 font-medium md:text-lg lg:text-xl">
                 {item.name}
               </p>
 

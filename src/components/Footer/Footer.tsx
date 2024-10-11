@@ -2,13 +2,16 @@ import { Divider } from "@mui/material";
 import Logo from "../../assets/Logo Official.png";
 import FacebookIcon from "../../assets/facebook.png";
 import ThreadsIcon from "../../assets/threads.png";
+import { GrMapLocation } from "react-icons/gr";
+import { FaPhoneAlt } from "react-icons/fa";
+import { MdOutlineEmail } from "react-icons/md";
 
 const Footer = () => {
   return (
     <div className="mt-10 lg:mt-32 text-[14px]">
       <Divider variant="fullWidth" sx={{ marginBottom: "40px" }} />
-      <div className="flex flex-col lg:grid lg:grid-cols-5 gap-10 lg:gap-20 lg:flex-row">
-        <div className="flex flex-col gap-5">
+      <div className="flex gap-10 lg:gap-20 flex-row flex-wrap">
+        <div className="flex flex-col max-w-[400px]">
           <img src={Logo} width={64} height={64} />
           <div className="leading-8">
             Trên trang web đặt phòng họp, bạn sẽ tìm thấy một không gian trực
@@ -27,7 +30,7 @@ const Footer = () => {
           <ul>
             <li>Giới thiệu</li>
             <li>An toàn - Bảo mật</li>
-            <li>Diều khoản - Điều lệ</li>
+            <li>Điều khoản - Điều lệ</li>
             <li>Chính sách quyền riêng tư</li>
           </ul>
         </div>
@@ -48,9 +51,16 @@ const Footer = () => {
             Chăm sóc khách hàng
           </div>
           <ul>
-            <li>Địa chỉ: Thành phố Hồ Chí Minh</li>
-            <li>Hotline: 0931337204</li>
-            <li>Email: quik@gmail.com</li>
+            <li className="flex items-center">
+              <GrMapLocation className="mr-2" size={20} /> Thành phố Hồ Chí Minh
+            </li>
+            <li className="flex items-center">
+              <FaPhoneAlt className="mr-2" size={20} /> 091 212 17 48
+            </li>
+            <li className="flex items-center">
+              <MdOutlineEmail size={20} className="mr-2" />
+              quik.vietnam@gmail.com
+            </li>
           </ul>
         </div>
         <div className="leading-8">

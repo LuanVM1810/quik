@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { HiOutlineMenu } from "react-icons/hi";
 import { IoCloseOutline } from "react-icons/io5";
 import QuikLogo from "../../assets/Logo Official@3x.png";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { GoPerson } from "react-icons/go";
 import { CiHeart } from "react-icons/ci";
 import { openMenuMobileContext } from "../../context/OpenMenuMobileProvider";
@@ -10,6 +10,7 @@ import { openMenuMobileContext } from "../../context/OpenMenuMobileProvider";
 const Header = () => {
   const value = useContext(openMenuMobileContext);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const onClickProfileAvatar = () => {
     navigate("/profile");
@@ -26,7 +27,7 @@ const Header = () => {
   };
 
   return (
-    <nav className="fixed z-[2] w-[100%] top-0 left-0 py-4 px-4 shadow-btn bg-white flex items-center">
+    <nav className="fixed z-[2] w-[100%] top-0 left-0 py-3 px-4 shadow-btn bg-white flex items-center">
       <div>
         <NavLink to="/">
           <img
@@ -111,12 +112,22 @@ const Header = () => {
       </div>
 
       <div className="hidden lg:block ml-auto text-lg">
-        <ul className="flex gap-24 font-semibold items-center">
-          <li className="header-li">
+        <ul className="flex gap-14 font-semibold items-center">
+          <li
+            className={`${
+              location.pathname === "/" &&
+              "border-2 border-[#506DF7] text-[#506df7]"
+            } header-li`}
+          >
             <NavLink to="/">Trang chủ</NavLink>
           </li>
 
-          <li className="header-li">
+          <li
+            className={`${
+              location.pathname === "/order-history" &&
+              "border-2 border-[#506DF7] text-[#506df7]"
+            } header-li`}
+          >
             <NavLink to="/order-history">Lịch sử giao dịch</NavLink>
           </li>
           <li className="header-li">Về chúng tôi</li>
