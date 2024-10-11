@@ -1,22 +1,6 @@
-import { MdOutlineChevronLeft } from "react-icons/md";
-import { useNavigate } from "react-router-dom";
-
 const ForgotPassword = () => {
-  const navigate = useNavigate();
-
-  const moveBackSignIn = () => {
-    navigate(-1);
-  };
   return (
-    <div className="h-screen text-white bg-gradient-to-b from-[#42FCAC] via-[#36B2F0] to-[#506DF7] mx-[-16px] my-[-16px] lg:mx-[-32px] lg:my-[-24px]">
-      <div className="p-4">
-        <MdOutlineChevronLeft
-          onClick={moveBackSignIn}
-          className="bg-[#F7F7F9] rounded-full cursor-pointer shadow-btn hover:opacity-80 lg:hidden"
-          size={"40px"}
-          color="black"
-        />
-      </div>
+    <div className="h-screen text-white bg-gradient-to-b from-[#42FCAC] via-[#36B2F0] to-[#506DF7] mx-[-16px] py-[40px] lg:mx-[-32px] lg:my-[-24px]">
       <div className="px-4 py-8 mt-10 flex flex-col gap-4 lg:gap-8 items-center justify-center text-center lg:text-[24px]">
         <p className="font-bold text-[26px] lg:text-[34px]">Quên mật khẩu</p>
         <p className="font-normal text-[16px] lg:text-[24px]">

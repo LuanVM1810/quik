@@ -2,7 +2,7 @@ import Avatar from "../../assets/astronaut.png";
 const Profile = () => {
   return (
     <>
-      <div className="flex flex-col text-[#1B1E28] h-auto px-4 min-h-screen">
+      <div className="flex flex-col text-[#1B1E28] pt-[40px] h-auto px-4 min-h-screen">
         <div className="flex flex-col items-center gap-3">
           <img src={Avatar} />
           <div className="text-center">

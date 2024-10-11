@@ -4,15 +4,15 @@ import Search from "../components/Search/Search";
 import WorkingSpaceApi from "../services/BusinessApi";
 import Loading from "../components/Loading/Loading";
 import { Pagination } from "@mui/material";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+// import { createTheme, ThemeProvider } from "@mui/material/styles";
 
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: "#506df7", // Your custom primary color
-    },
-  },
-});
+// const theme = createTheme({
+//   palette: {
+//     primary: {
+//       main: "#506df7", // Your custom primary color
+//     },
+//   },
+// });
 
 const initState = {
   loading: false,
@@ -74,9 +74,7 @@ const AllSpace = () => {
         </div>
       )}
       <div className="my-10 flex justify-center">
-        <ThemeProvider theme={theme}>
-          <Pagination count={10} color="primary" variant="text" />
-        </ThemeProvider>
+        <Pagination count={10} color="primary" variant="text" />
       </div>
     </div>
   );

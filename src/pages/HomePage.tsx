@@ -1,7 +1,5 @@
 import { NavLink } from "react-router-dom";
-import Category from "../components/Category/Category";
 import ImageSlider from "../components/ImageSlider/ImageSlider";
-import Search from "../components/Search/Search";
 import { FaRegHandPointDown } from "react-icons/fa6";
 import WeeklyDeals from "../components/WeeklyDeals/WeeklyDeals";
 
@@ -9,10 +7,6 @@ const HomePage = () => {
   return (
     <>
       <div className="flex flex-col gap-5 lg:gap-10">
-        <div className="lg:flex gap-5">
-          <Search placeholder="Tìm kiếm" />
-          <Category />
-        </div>
         <div className="flex items-center leading-8 lg:leading-10 text-center uppercase font-bold text-xl md:text-2xl lg:text-3xl justify-center relative aspect-video mb-10 mx-[-32px]">
           <video
             autoPlay

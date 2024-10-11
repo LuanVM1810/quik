@@ -15,7 +15,7 @@ const RootLayout = () => {
     <div
       className={` ${
         context?.isOpen === true && `overflow-y-clip`
-      } bg-[#edf0fe] -z-1 text-[#2C2C2C] min-h-screen px-4 pt-16 lg:pt-20 pb-4 overflow-x-hidden lg:px-8`}
+      } bg-[#edf0fe] -z-1 text-[#2C2C2C] min-h-screen px-4 pt-14 pb-4 overflow-x-hidden lg:px-8`}
     >
       <ScrollToTop />
       <header>
