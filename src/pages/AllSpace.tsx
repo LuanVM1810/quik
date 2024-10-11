@@ -54,7 +54,7 @@ const AllSpace = () => {
     fetchData();
   }, []);
   return (
-    <div className="min-h-screen">
+    <div className="">
       {allspaces.loading ? (
         <Loading />
       ) : (

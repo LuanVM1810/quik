@@ -1,37 +1,28 @@
 import { Outlet, useLocation } from "react-router-dom";
 import Header from "../components/Header/Header";
-import Breadcrumbs from "../components/Breadcrumbs/Breadcrumbs";
-import RenderIf from "../components/RenderIf/RenderIf";
+// import Breadcrumbs from "../components/Breadcrumbs/Breadcrumbs";
+// import RenderIf from "../components/RenderIf/RenderIf";
 import { useContext } from "react";
 import { openMenuMobileContext } from "../context/OpenMenuMobileProvider";
 import ScrollToTop from "../components/ScrollToTop/ScrollToTop";
 import Footer from "../components/Footer/Footer";
 
 const RootLayout = () => {
-  const location = useLocation();
+  // const location = useLocation();
   const context = useContext(openMenuMobileContext);
 
   return (
     <div
       className={` ${
         context?.isOpen === true && `overflow-y-clip`
-      } bg-[#edf0fe] -z-1 text-[#2C2C2C] h-auto px-4 py-4 overflow-x-hidden lg:px-8 lg:py-6`}
+      } bg-[#edf0fe] -z-1 text-[#2C2C2C] min-h-screen px-4 pt-16 lg:pt-20 pb-4 overflow-x-hidden lg:px-8`}
     >
       <ScrollToTop />
       <header>
-        <RenderIf
-          isTrue={
-            location.pathname !== "/sign-in" &&
-            location.pathname !== "/sign-up" &&
-            location.pathname !== "/forgot-password" &&
-            location.pathname !== "/signup-company"
-          }
-        >
-          <nav>
-            <Header />
-          </nav>
-          <Breadcrumbs />
-        </RenderIf>
+        <nav>
+          <Header />
+        </nav>
+        {/* <Breadcrumbs /> */}
       </header>
       <main>
         <Outlet />

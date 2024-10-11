@@ -13,7 +13,7 @@ const OrderHistoryPage = () => {
     setOrderStatus("cancel");
   };
   return (
-    <div className="lg:grid h-screen lg:grid-cols-3 lg:min-h-screen">
+    <div className="lg:grid lg:grid-cols-3 lg:min-h-screen">
       <div className="ml-2 lg:text-[20px] lg:col-span-1 lg:mr-20">
         <ul className="flex justify-between lg:flex-col">
           <li
