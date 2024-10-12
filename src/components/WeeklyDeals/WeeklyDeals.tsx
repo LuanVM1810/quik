@@ -33,7 +33,7 @@ const WeeklyDeals = () => {
               </p>
               <div className="flex items-center gap-1 text-xs md:text-sm lg:text-base">
                 <Rating
-                  sx={{ color: "#FFD336" }}
+                  sx={{ color: "#506df7" }}
                   name="read-only"
                   size="small"
                   precision={0.1}

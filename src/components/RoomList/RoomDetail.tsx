@@ -158,7 +158,7 @@ export default function RoomDetail() {
               <p className="text-[20px] flex items-center gap-10 lg:gap-[40px]">
                 Đánh giá (2)
                 <Rating
-                  sx={{ marginLeft: "auto" }}
+                  sx={{ marginLeft: "auto", color: "#506df7" }}
                   value={4.5}
                   precision={0.1}
                   readOnly
@@ -168,7 +168,12 @@ export default function RoomDetail() {
             <AccordionDetails>
               <>
                 <div className="flex gap-4 mb-[8px]">
-                  <Rating value={4.5} precision={0.1} readOnly />
+                  <Rating
+                    sx={{ color: "#506df7" }}
+                    value={4.5}
+                    precision={0.1}
+                    readOnly
+                  />
                   <p>4.5 Sao</p>
                 </div>
                 <button className="border-b-2 border-black mb-[48px]">
@@ -179,7 +184,12 @@ export default function RoomDetail() {
                     <li className="pb-[24px]">
                       <div className="mb-[8px] font-bold">Phòng đẹp</div>
                       <div className="flex justify-between mb-[16px]">
-                        <Rating value={5} precision={1} readOnly />
+                        <Rating
+                          sx={{ color: "#506df7" }}
+                          value={5}
+                          precision={1}
+                          readOnly
+                        />
                         <p className="text-[#707072]">Kunal- 11 Aug 2024</p>
                       </div>
                       <div className="mb-[16px]">
@@ -189,7 +199,12 @@ export default function RoomDetail() {
                     <li className="pb-[24px]">
                       <div className="mb-[8px] font-bold">Tuyệt!</div>
                       <div className="flex justify-between mb-[16px]">
-                        <Rating value={5} precision={1} readOnly />
+                        <Rating
+                          sx={{ color: "#506df7" }}
+                          value={5}
+                          precision={1}
+                          readOnly
+                        />
                         <p className="text-[#707072]">Justin- 11 Aug 2024</p>
                       </div>
                       <div className="mb-[16px]">
