@@ -5,13 +5,17 @@ import QuikLogo from "../../assets/Logo Official@3x.png";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { GoPerson } from "react-icons/go";
 import { openMenuMobileContext } from "../../context/OpenMenuMobileProvider";
+import { IoIosArrowDown } from "react-icons/io";
+import { AuthContext } from "../../context/AuthProvider";
+import { toast } from "sonner";
 
 const Header = () => {
+  const authContext = useContext(AuthContext);
   const value = useContext(openMenuMobileContext);
   const navigate = useNavigate();
   const location = useLocation();
   const [openService, setOpenService] = useState<boolean>(false);
-  console.log(openService);
+  const [openProfile, setOpenProfile] = useState<boolean>(false);
 
   const onClickProfileAvatar = () => {
     navigate("/profile");
@@ -25,6 +29,12 @@ const Header = () => {
   const goHome = () => {
     navigate("/");
     value?.setIsOpen(false);
+  };
+
+  const onClickLogout = () => {
+    setOpenProfile(false);
+    authContext?.logout();
+    toast.success("Đăng xuất thành công");
   };
 
   return (
@@ -97,12 +107,12 @@ const Header = () => {
             </span>
           </p>
           <div className="flex my-3 text-base font-bold gap-2 mt-[30px]">
-            <NavLink to="/sign-up">
+            <NavLink to="/signup-company">
               <button className="bg-[#2c2c2c] hover:bg-gray-500 text-white px-4 py-2 rounded-3xl">
                 Tham gia
               </button>
             </NavLink>
-            <NavLink to="/sign-in">
+            <NavLink to="/signin">
               <button className="bg-white hover:bg-gray-500 border-solid border-[1px] px-4 py-2 rounded-3xl border-gray-600 text-[#2c2d2c]">
                 Đăng nhập
               </button>
@@ -137,13 +147,20 @@ const Header = () => {
             onMouseLeave={() => {
               setOpenService(false);
             }}
-            className="px-4 relative"
+            className="px-4 relative flex gap-2 items-center transition-all duration-500"
           >
             Dịch vụ
+            <span
+              className={`${
+                openService === true ? "rotate-180" : "rotate-0"
+              } transition-all duration-500`}
+            >
+              <IoIosArrowDown size={20} />
+            </span>
             <div
               className={`absolute ${
                 openService === true ? "block" : "hidden"
-              } bg-white rounded-3xl py-4 w-[250px] top-6 right-4 shadow-btn transition-all duration-700 pl-4`}
+              } bg-white border-gradient rounded-2xl py-4 w-[250px] top-8 right-4 shadow-btn transition-all duration-700 pl-4`}
             >
               <ul>
                 <NavLink to="/allspace">
@@ -161,19 +178,50 @@ const Header = () => {
           </li>
 
           <li className="ml-10">
-            <div className="flex text-base font-bold gap-2">
-              <NavLink to="/sign-up">
-                <button className="bg-[#506DF7] text-white hover:bg-white hover:text-[#506DF7] hover:shadow-btn hover:scale-110 px-4 py-2 rounded-3xl transition-all duration-300">
-                  Tham gia
-                </button>
-              </NavLink>
-              <NavLink to="/sign-in">
-                <button className="bg-white hover:bg-[#506DF7] hover:scale-110 hover:text-white border-solid border-[1px] px-4 py-2 rounded-3xl border-[#506DF7] text-[#506DF7] transition-all duration-300">
-                  Đăng nhập
-                </button>
-              </NavLink>
-            </div>
-            {/* <NavLink to="/profile">Hồ sơ </NavLink> */}
+            {authContext?.isLogin === true ? (
+              <div
+                onMouseOver={() => setOpenProfile(true)}
+                onMouseLeave={() => setOpenProfile(false)}
+                className="relative border-gradient px-4 flex items-center gap-2"
+              >
+                <GoPerson size={18} />
+                <p>Tên người dùng</p>
+                <div
+                  className={`bg-white absolute rounded-2xl py-4 w-[180px] top-8 border-gradient shadow-btn transition-all duration-700 pl-4 ${
+                    openProfile ? "block" : "hidden"
+                  }`}
+                >
+                  <ul>
+                    <li className="py-2 hover:text-quik-purple">
+                      <NavLink to="/profile">Hồ sơ</NavLink>
+                    </li>
+
+                    <li className="py-2 hover:text-quik-purple cursor-pointer">
+                      <NavLink to="/order-history">Lịch sử giao dịch</NavLink>
+                    </li>
+                    <li
+                      onClick={onClickLogout}
+                      className="py-2 hover:text-quik-purple cursor-pointer"
+                    >
+                      Đăng xuất
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            ) : (
+              <div className="flex text-base font-bold gap-2">
+                <NavLink to="/signup-company">
+                  <button className="bg-[#506DF7] text-white hover:bg-white hover:text-[#506DF7] hover:shadow-btn hover:scale-110 px-4 py-2 rounded-3xl transition-all duration-300">
+                    Đối tác
+                  </button>
+                </NavLink>
+                <NavLink to="/signin">
+                  <button className="bg-white hover:bg-[#506DF7] hover:scale-110 hover:text-white border-solid border-[1px] px-4 py-2 rounded-3xl border-[#506DF7] text-[#506DF7] transition-all duration-300">
+                    Đăng nhập
+                  </button>
+                </NavLink>
+              </div>
+            )}
           </li>
         </ul>
       </div>

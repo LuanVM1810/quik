@@ -74,7 +74,7 @@ const SignUpCompany = () => {
         </button>
         <div className="text-center text-white font-normal mb-10">
           Đã có tài khoản?
-          <NavLink to="/sign-in">
+          <NavLink to="/signin">
             <span className="font-extrabold ml-2 cursor-pointer hover:underline">
               Đăng nhập
             </span>

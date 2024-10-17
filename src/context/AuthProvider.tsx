@@ -19,7 +19,8 @@ const AuthProvider = ({ children }: Props) => {
     setIsLogin(true);
   };
 
-  const logout = () => {
+  const logout = async () => {
+    await localStorage.clear();
     setIsLogin(false);
   };
   const value = {

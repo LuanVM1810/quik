@@ -19,9 +19,14 @@ const SignUp = () => {
           type="email"
         />
         <input
+          placeholder="Họ và tên"
+          className="px-2 py-4 lg:w-[30%] lg:px-4 rounded-xl outline-none transition-all duration-300 focus:scale-105 focus:translate-y-[-5px] focus:shadow-image"
+          type="text"
+        />
+        <input
           placeholder="Tên người dùng"
           className="px-2 py-4 lg:w-[30%] lg:px-4 rounded-xl outline-none transition-all duration-300 focus:scale-105 focus:translate-y-[-5px] focus:shadow-image"
-          type="Tên người dùng"
+          type="text"
         />
         <div className="relative lg:w-[30%]">
           <input
@@ -57,7 +62,7 @@ const SignUp = () => {
         </button>
         <div className="text-center text-white font-normal">
           Đã có tài khoản?
-          <NavLink to="/sign-in">
+          <NavLink to="/signin">
             <span className="font-extrabold ml-2 cursor-pointer hover:underline">
               Đăng nhập
             </span>

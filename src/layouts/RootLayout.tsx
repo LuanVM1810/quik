@@ -6,6 +6,7 @@ import { useContext } from "react";
 import { openMenuMobileContext } from "../context/OpenMenuMobileProvider";
 import ScrollToTop from "../components/ScrollToTop/ScrollToTop";
 import Footer from "../components/Footer/Footer";
+import { Toaster } from "sonner";
 
 const RootLayout = () => {
   // const location = useLocation();
@@ -30,6 +31,7 @@ const RootLayout = () => {
       <footer>
         <Footer />
       </footer>
+      <Toaster />
     </div>
   );
 };

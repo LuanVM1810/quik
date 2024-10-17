@@ -10,12 +10,14 @@ const axiosClient = axios.create({
 
 // Add a request interceptor
 axiosClient.interceptors.request.use(
-  function (config) {
-    // Do something before request is sent
+  (config) => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
     return config;
   },
-  function (error) {
-    // Do something with request error
+  (error) => {
     return Promise.reject(error);
   }
 );
