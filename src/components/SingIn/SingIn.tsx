@@ -48,6 +48,7 @@ const SingIn = () => {
         localStorage.clear();
         localStorage.setItem("token", response.data.token);
         localStorage.setItem("refreshToken", response.data.refreshToken);
+        localStorage.setItem("username", response.data.username);
         toast.success("Đăng nhập thành công", {
           onAutoClose: () => navigate("/"),
         });

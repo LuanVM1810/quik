@@ -185,9 +185,9 @@ const Header = () => {
                 className="relative border-gradient px-4 flex items-center gap-2"
               >
                 <GoPerson size={18} />
-                <p>Tên người dùng</p>
+                <p>{localStorage.getItem("username")}</p>
                 <div
-                  className={`bg-white absolute rounded-2xl py-4 w-[180px] top-8 border-gradient shadow-btn transition-all duration-700 pl-4 ${
+                  className={`bg-white absolute rounded-2xl py-4 w-[180px] top-8 right-0 border-gradient shadow-btn transition-all duration-700 pl-4 ${
                     openProfile ? "block" : "hidden"
                   }`}
                 >
