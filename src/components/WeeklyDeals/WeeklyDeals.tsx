@@ -1,6 +1,7 @@
 import { Rating } from "@mui/material";
 import { FaRegHeart } from "react-icons/fa";
 import { roomList } from "../../constants";
+import { HiOutlineMapPin } from "react-icons/hi2";
 
 const WeeklyDeals = () => {
   return (
@@ -28,7 +29,8 @@ const WeeklyDeals = () => {
                 {item.name}
               </p>
 
-              <p className="text-xs md:text-sm lg:text-base text-[#7D848D]">
+              <p className="text-xs md:text-sm flex gap-1 items-center lg:text-base text-[#7D848D]">
+                <HiOutlineMapPin size={"16px"} />
                 {item.address}
               </p>
               <div className="flex items-center gap-1 text-xs md:text-sm lg:text-base">
