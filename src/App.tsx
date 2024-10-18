@@ -16,6 +16,11 @@ import OrderHistoryPage from "./pages/OrderHistoryPage";
 import SignUpCompany from "./components/SignUp/SignUpCompany";
 import Profile from "./components/Profile/Profile";
 import AboutUs from "./components/AboutUs/AboutUs";
+import AdminLayout from "./layouts/AdminLayout";
+import UserList from "./components/Admin/UserList";
+import BusinessList from "./components/Admin/BusinessList";
+import TransactionList from "./components/Admin/TransactionList";
+import Revenue from "./components/Admin/Revenue";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -32,6 +37,13 @@ const router = createBrowserRouter(
         <Route path=":roomId" element={<RoomDetail />} />
       </Route>
       <Route path="profile" element={<Profile />} />
+      {/* Admin Route */}
+      <Route path="/admin" element={<AdminLayout />}>
+        <Route index element={<UserList />} />
+        <Route path="business" element={<BusinessList />} />
+        <Route path="transaction" element={<TransactionList />} />
+        <Route path="revenue" element={<Revenue />} />
+      </Route>
     </Route>
   )
 );

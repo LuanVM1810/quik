@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Header from "../components/Header/Header";
 // import Breadcrumbs from "../components/Breadcrumbs/Breadcrumbs";
 // import RenderIf from "../components/RenderIf/RenderIf";
@@ -7,9 +7,10 @@ import { openMenuMobileContext } from "../context/OpenMenuMobileProvider";
 import ScrollToTop from "../components/ScrollToTop/ScrollToTop";
 import Footer from "../components/Footer/Footer";
 import { Toaster } from "sonner";
+import RenderIf from "../components/RenderIf/RenderIf";
 
 const RootLayout = () => {
-  // const location = useLocation();
+  const location = useLocation();
   const context = useContext(openMenuMobileContext);
 
   return (
@@ -20,17 +21,21 @@ const RootLayout = () => {
     >
       <ScrollToTop />
       <header>
-        <nav>
-          <Header />
-        </nav>
+        <RenderIf isTrue={location.pathname.slice(0, 6) !== "/admin"}>
+          <nav>
+            <Header />
+          </nav>
+        </RenderIf>
         {/* <Breadcrumbs /> */}
       </header>
       <main>
         <Outlet />
       </main>
-      <footer>
-        <Footer />
-      </footer>
+      <RenderIf isTrue={location.pathname.slice(0, 6) !== "/admin"}>
+        <footer>
+          <Footer />
+        </footer>
+      </RenderIf>
       <Toaster />
     </div>
   );
