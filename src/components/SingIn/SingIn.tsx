@@ -8,6 +8,7 @@ import * as yup from "yup";
 import authApi from "../../services/AuthApi";
 import { toast } from "sonner";
 import { AuthContext } from "../../context/AuthProvider";
+import { AiOutlineLoading } from "react-icons/ai";
 
 const schema = yup.object().shape({
   email: yup
@@ -44,15 +45,18 @@ const SingIn = () => {
         password: data.password,
       })
       .then((response) => {
-        setIsLoading(false);
         localStorage.clear();
         localStorage.setItem("token", response.data.token);
         localStorage.setItem("refreshToken", response.data.refreshToken);
         localStorage.setItem("username", response.data.username);
+
         toast.success("Đăng nhập thành công", {
-          onAutoClose: () => navigate("/"),
+          onAutoClose: () => {
+            setIsLoading(false);
+            navigate("/");
+            authContext?.login();
+          },
         });
-        authContext?.login();
 
         // console.log(response.data);
       })
@@ -125,9 +129,17 @@ const SingIn = () => {
           <button
             type="submit"
             disabled={isloading ? true : false}
-            className={`bg-[#0D6EFD] lg:w-[30%] shadow-btn text-white font-extrabold py-4 px-2 rounded-xl transition-all duration-300 focus:shadow-none focus:scale-95`}
+            className={` ${
+              isloading ? "bg-black" : "bg-[#0D6EFD]"
+            } lg:w-[30%] shadow-btn text-white font-extrabold py-4 px-2 rounded-xl transition-all duration-300 focus:shadow-none focus:scale-95`}
           >
-            {isloading ? "..." : "Đăng nhập"}
+            {isloading ? (
+              <div className="flex justify-center">
+                <AiOutlineLoading size={24} className="animate-spin" />
+              </div>
+            ) : (
+              "Đăng nhập"
+            )}
           </button>
           <div className="text-center text-white font-normal">
             Chưa có tài khoản?

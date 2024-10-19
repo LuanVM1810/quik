@@ -33,12 +33,16 @@ const Header = () => {
 
   const onClickLogout = () => {
     setOpenProfile(false);
-    authContext?.logout();
-    toast.success("Đăng xuất thành công");
+
+    toast.success("Đăng xuất thành công", {
+      onAutoClose: () => {
+        authContext?.logout();
+      },
+    });
   };
 
   return (
-    <nav className="fixed z-[2] w-[100%] top-0 left-0 py-3 px-4 shadow-btn bg-white flex items-center">
+    <nav className="fixed z-[2] w-[100%] h-[60px] max-h-[60px] top-0 left-0 py-3 px-4 shadow-btn bg-white flex items-center">
       <div>
         <NavLink to="/">
           <img
