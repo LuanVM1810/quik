@@ -8,7 +8,7 @@ import { MdOutlineMeetingRoom } from "react-icons/md";
 import { FaDoorOpen } from "react-icons/fa";
 import { GoPeople } from "react-icons/go";
 import { useState } from "react";
-import * as React from "react";
+import { useEffect } from "react";
 import { Dayjs } from "dayjs";
 import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
@@ -16,13 +16,38 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DateTimePicker } from "@mui/x-date-pickers/DateTimePicker";
 import { CiClock2 } from "react-icons/ci";
 import ImageSlider from "../ImageSlider/ImageSlider";
+import { useParams } from "react-router-dom";
+import workingSpaceApi from "../../services/WorkingSpaceApi";
+import { WorkingSpaceDetail } from "../../interfaces/WorkingSpaceInterface";
+import reviewApi from "../../services/ReviewApi";
+import { Review } from "../../interfaces/ReviewInterface";
+import parseDate from "../../utils/parseDate";
 
 export default function RoomDetail() {
+  const { roomId } = useParams();
   const [numberRoom, setNumberRoom] = useState<number | null>(null);
   const [numberPeople, setNumberPeople] = useState<number | null>(null);
-  const [date, setDate] = React.useState<Dayjs | null>(null);
-  // const roomId = useParams();
-  console.log(date);
+  const [date, setDate] = useState<Dayjs | null>(null);
+  const [roomDetail, setRoomDetail] = useState<WorkingSpaceDetail>();
+  const [reviews, setReviews] = useState<Review>();
+
+  // console.log(roomId);
+  // console.log(date);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const roomDetail = await workingSpaceApi.getById(roomId);
+        const review = await reviewApi.getReviewById(roomId);
+        setRoomDetail(roomDetail.data);
+        setReviews(review.data);
+      } catch (e) {
+        console.log(e);
+      }
+    };
+    fetchData();
+  }, [roomId, roomDetail, reviews]);
+
   const onChangeNumberRoom = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -34,6 +59,7 @@ export default function RoomDetail() {
   ) => {
     setNumberPeople(parseInt(e.target.value));
   };
+
   return (
     <div className="text-[#111111] min-h-screen py-[40px] lg:px-[150px]">
       <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-x-5">
@@ -42,9 +68,15 @@ export default function RoomDetail() {
             <p className="text-white font-semibold p-1 text-xs lg:text-sm rounded-md bg-[#506DF7]">
               Không gian làm việc
             </p>
-            <p className="font-semibold">L'Mak Tower</p>
+            <p className="font-semibold">{roomDetail?.title}</p>
           </div>
-          <p className="font-bold py-5 text-[#506DF7]">400.000 VND</p>
+          <p className="py-5 font-medium text-quik-black text-xl">
+            Từ{" "}
+            <span className="text-quik-purple font-bold">
+              {roomDetail?.pricePerHour}
+            </span>{" "}
+            <span className="text-quik-purple font-bold">đ</span>/giờ
+          </p>
         </div>
         <div className="w-full lg:row-span-2 lg:col-span-2 lg:justify-start">
           <ImageSlider autoSlide={true} autoSlideInterval={2500} />
@@ -99,14 +131,11 @@ export default function RoomDetail() {
             Đặt ngay
           </button>
           <p className="py-5 text-left leading-8">
-            Căn phòng này là một không gian hiện đại và ấm áp. Sự kết hợp giữa
-            tông màu trắng và nâu tạo nên cảm giác thoáng đãng và ấm cúng. Ánh
-            sáng tự nhiên từ cửa sổ lớn chiếu vào phòng, làm tôn lên vẻ đẹp của
-            các đồ nội thất. Trên sàn nhà lát gạch men trắng sáng, tạo cảm giác
-            sạch sẽ và sang trọng. Một bức tranh trừu tượng treo trên bức tường
-            trắng, tạo điểm nhấn nghệ thuật cho căn phòng. Ghế sofa màu nâu êm
-            ái được bố trí gần cửa sổ, tạo không gian thư giãn lý tưởng để đọc
-            sách hoặc thưởng ngoạn phong cảnh bên ngoài.
+            Phòng này hiện đại và ấm áp với sự kết hợp giữa tông màu trắng và
+            nâu tạo cảm giác thoáng đãng. Ánh sáng tự nhiên từ cửa sổ lớn chiếu
+            vào phòng, tôn vẻ đẹp của nội thất. Sàn nhà lát gạch men trắng sáng,
+            tạo cảm giác sạch sẽ và sang trọng. Tranhs trừu tượng trên tường
+            trắng, ghế sofa màu nâu êm ái gần cửa sổ, tạo không gian thư giãn.
           </p>
         </div>
         <div className="my-5 lg:col-start-1">
@@ -122,7 +151,7 @@ export default function RoomDetail() {
               <div>
                 <div className="pb-6">
                   <p className="flex gap-2 mb-2">
-                    <GoPeople size={"24px"} /> 10 người
+                    <GoPeople size={"24px"} /> {roomDetail?.capacity} người
                   </p>
                   <p className="flex gap-2 mb-2">
                     <MdOutlineMeetingRoom size={"24px"} /> 1 phòng
@@ -132,12 +161,12 @@ export default function RoomDetail() {
                 <div className="my-4">
                   <p className="font-bold mb-3">Tiện nghi phòng</p>
                   <ul className="list-disc ml-7">
-                    <li>Máy lạnh</li>
-                    <li>Nước đóng chai miễn phí</li>
-                    <li>Free wifi</li>
+                    {roomDetail?.amenities.map((amentity) => (
+                      <li>{amentity.amenityText}</li>
+                    ))}
                   </ul>
                 </div>
-                <Divider variant="fullWidth" />
+                {/* <Divider variant="fullWidth" />
                 <div className="my-4">
                   <p className="font-bold mb-3">Trang bị phòng tắm</p>
                   <ul className="list-disc ml-7">
@@ -145,7 +174,7 @@ export default function RoomDetail() {
                     <li>Vòi tắm đứng</li>
                     <li>Bộ vệ sinh cá nhân</li>
                   </ul>
-                </div>
+                </div> */}
               </div>
             </AccordionDetails>
           </Accordion>
@@ -156,7 +185,7 @@ export default function RoomDetail() {
               id="panel2-header"
             >
               <p className="text-[20px] flex items-center gap-10 lg:gap-[40px]">
-                Đánh giá (2)
+                Đánh giá ({reviews?.reviews.length})
                 <Rating
                   sx={{ marginLeft: "auto", color: "#506df7" }}
                   value={4.5}
@@ -181,37 +210,26 @@ export default function RoomDetail() {
                 </button>
                 <div className="my-5">
                   <ul>
-                    <li className="pb-[24px]">
-                      <div className="mb-[8px] font-bold">Phòng đẹp</div>
-                      <div className="flex justify-between mb-[16px]">
-                        <Rating
-                          sx={{ color: "#506df7" }}
-                          value={5}
-                          precision={1}
-                          readOnly
-                        />
-                        <p className="text-[#707072]">Kunal- 11 Aug 2024</p>
-                      </div>
-                      <div className="mb-[16px]">
-                        Nên trải nghiệm học ở đây, rất yên tĩnh
-                      </div>
-                    </li>
-                    <li className="pb-[24px]">
-                      <div className="mb-[8px] font-bold">Tuyệt!</div>
-                      <div className="flex justify-between mb-[16px]">
-                        <Rating
-                          sx={{ color: "#506df7" }}
-                          value={5}
-                          precision={1}
-                          readOnly
-                        />
-                        <p className="text-[#707072]">Justin- 11 Aug 2024</p>
-                      </div>
-                      <div className="mb-[16px]">
-                        Thái độ nhân viên tốt, nước tạm được, không gian ổn cho
-                        họp nhóm
-                      </div>
-                    </li>
+                    {reviews?.reviews.map((review) => (
+                      <li className="pb-[24px]">
+                        <div className="mb-[8px] font-bold">
+                          {review.comment}
+                        </div>
+                        <div className="flex justify-between items-center mb-[16px]">
+                          <Rating
+                            sx={{ color: "#506df7" }}
+                            value={review.rating}
+                            precision={1}
+                            readOnly
+                          />
+                          <p className="text-[#707072]">
+                            {review.username} -{" "}
+                            {parseDate(review.createdAt.toString())}
+                          </p>
+                        </div>
+                        <div className="mb-[16px]">{review.comment}</div>
+                      </li>
+                    ))}
                   </ul>
                   <button className="border-b-2 border-black">
                     More Reviews

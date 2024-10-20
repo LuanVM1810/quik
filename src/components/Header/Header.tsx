@@ -37,6 +37,7 @@ const Header = () => {
     toast.success("Đăng xuất thành công", {
       onAutoClose: () => {
         authContext?.logout();
+        navigate("/signin");
       },
     });
   };
@@ -169,7 +170,7 @@ const Header = () => {
               <ul>
                 <NavLink to="/allspace">
                   <li className="py-2 hover:text-quik-purple">
-                    Không gian làm việc chung
+                    Không gian làm việc
                   </li>
                 </NavLink>
                 <li className="py-2 hover:text-quik-purple">Phòng họp</li>

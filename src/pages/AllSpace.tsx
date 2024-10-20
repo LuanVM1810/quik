@@ -1,10 +1,10 @@
 import { useEffect, useReducer } from "react";
 import RoomList from "../components/RoomList/RoomList";
 import Search from "../components/Search/Search";
-import WorkingSpaceApi from "../services/BusinessApi";
 import Loading from "../components/Loading/Loading";
 import { Pagination } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import workingSpaceApi from "../services/WorkingSpaceApi";
 
 const theme = createTheme({
   palette: {
@@ -46,12 +46,12 @@ const AllSpace = () => {
   const [allspaces, allSpaceDispatch] = useReducer(allSpaceReducer, initState);
 
   useEffect(() => {
-    // allSpaceDispatch({
-    //   type: "GET_ALLSPACE_REQUEST",
-    // });
+    allSpaceDispatch({
+      type: "GET_ALLSPACE_REQUEST",
+    });
     const fetchData = async () => {
       try {
-        const fetchWorkingSpace = await WorkingSpaceApi.getAll();
+        const fetchWorkingSpace = await workingSpaceApi.getAll();
         allSpaceDispatch({
           type: "GET_ALLSPACE_SUCCESS",
           data: fetchWorkingSpace.data,
@@ -63,6 +63,9 @@ const AllSpace = () => {
     };
     fetchData();
   }, []);
+
+  console.log(allspaces.data);
+
   return (
     <div className="mb-10">
       {allspaces.loading ? (
@@ -70,7 +73,7 @@ const AllSpace = () => {
       ) : (
         <div>
           <Search placeholder="Tìm kiếm" />
-          <RoomList />
+          <RoomList roomList={allspaces.data} />
         </div>
       )}
       <div className="my-10 flex justify-center">

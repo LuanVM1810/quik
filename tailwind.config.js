@@ -16,6 +16,7 @@ export default {
         "quik-purple": "#506df7",
         "quik-green": "#42fcac",
         "quik-blue": "#36b2f0",
+        "quik-black": "#1B1E28"
       },
       keyframes: {
         rotate: {

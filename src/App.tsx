@@ -21,6 +21,7 @@ import UserList from "./components/Admin/UserList";
 import BusinessList from "./components/Admin/BusinessList";
 import TransactionList from "./components/Admin/TransactionList";
 import Revenue from "./components/Admin/Revenue";
+import NotFoundPage from "./pages/error/NotFoundPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -44,6 +45,8 @@ const router = createBrowserRouter(
         <Route path="transaction" element={<TransactionList />} />
         <Route path="revenue" element={<Revenue />} />
       </Route>
+      {/* 404 Page */}
+      <Route path="/*" element={<NotFoundPage />} />
     </Route>
   )
 );
