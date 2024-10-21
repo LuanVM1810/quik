@@ -64,7 +64,7 @@ const AllSpace = () => {
     fetchData();
   }, []);
 
-  console.log(allspaces.data);
+  // console.log(allspaces.data);
 
   return (
     <div className="mb-10">

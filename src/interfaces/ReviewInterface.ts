@@ -8,5 +8,6 @@ export interface ReviewElement {
   spaceId: string;
   rating: number;
   comment: string;
+  title: string;
   createdAt: Date;
 }

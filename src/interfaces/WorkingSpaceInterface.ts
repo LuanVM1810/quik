@@ -1,14 +1,17 @@
 export interface WorkingSpace {
   spaceId: string;
   businessId: string;
+  businessName: string;
   imageId: string;
   title: string;
   description: string;
   pricePerHour: number;
+  rating: number;
   roomType: string;
   capacity: number;
   location: string;
   image: null;
+  imageUrls: any[];
 }
 
 export interface WorkingSpaceDetail extends WorkingSpace {

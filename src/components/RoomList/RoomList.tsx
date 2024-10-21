@@ -10,6 +10,7 @@ type Props = {
 };
 
 const RoomList = ({ roomList }: Props) => {
+  console.log(roomList);
   return (
     <>
       <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-5">
@@ -33,7 +34,7 @@ const RoomList = ({ roomList }: Props) => {
 
               <div className="pl-1 text-[#1B1E28]">
                 <p className="text-sm truncate font-semibold md:text-base lg:text-lg">
-                  {item.businessId}
+                  {item.businessName}
                 </p>
               </div>
 
@@ -52,11 +53,13 @@ const RoomList = ({ roomList }: Props) => {
                   name="read-only"
                   size="small"
                   precision={0.1}
-                  value={item.capacity}
+                  value={item.rating}
                   readOnly
                 />
                 <p className="font-normal text-xs text-[#1B1E28]  md:text-sm lg:text-base">
-                  {item.capacity}
+                  {item.rating != 0
+                    ? item.rating.toFixed(1)
+                    : "Chưa có đánh giá"}
                 </p>
               </div>
               <div className="pl-1">
