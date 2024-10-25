@@ -1,0 +1,44 @@
+#app { height: 100% }
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+}
+
+.swiper-slide img {
+  display: block;
+  height: 300px;
+  width: 300px;
+  border-radius: 24px;
+}
+
+.swiper-pagination-bullet {
+  background: #F9F9FBB2; /* Set the background color to red */
+}
+
+/* Optional: Change the active bullet color */
+.swiper-pagination-bullet-active {
+  background: #F9F9FB; /* Set the background color of the active bullet to green */
+}

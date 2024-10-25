@@ -1,13 +1,14 @@
-import { NavLink } from "react-router-dom";
 import ImageSlider from "../components/ImageSlider/ImageSlider";
-import { FaRegHandPointDown } from "react-icons/fa6";
-import WeeklyDeals from "../components/WeeklyDeals/WeeklyDeals";
+import { IoSearchOutline } from "react-icons/io5";
+// import WeeklyDeals from "../components/WeeklyDeals/WeeklyDeals";
+import AboutUs from "../components/AboutUs/AboutUs";
+import SwiperList from "../components/Swiper/SwiperList";
 
 const HomePage = () => {
   return (
     <>
       <div className="flex flex-col gap-5 lg:gap-10">
-        <div className="flex items-center leading-8 lg:leading-10 text-center uppercase font-bold text-xl md:text-2xl lg:text-3xl justify-center relative aspect-video mb-10 mx-[-32px]">
+        <div className="flex items-center leading-8 lg:leading-10 text-center font-bold text-xl md:text-2xl lg:text-3xl justify-center relative aspect-video mx-[-32px]">
           <video
             autoPlay
             loop
@@ -20,18 +21,27 @@ const HomePage = () => {
             />
           </video>
           <div className="absolute flex flex-col items-center text-white">
-            <p>MEET ĐÂU KHÔNG KHÓ </p>
-            <p>BOOK QUIK KHỎI LO</p>
-            <FaRegHandPointDown size={35} className="mt-8 animate-bounce" />
-            <NavLink to="/allspace">
-              <button className="mt-4 px-6 py-2 border-2 outline-none rounded-2xl border-white hover:bg-white hover:text-[#506DF7] transition-all duration-300">
-                Book ngay
+            <p className="lg:text-[32px] uppercase">Meet đâu không khó, </p>
+            <p className="lg:text-[32px] uppercase">book QUIK khỏi lo</p>
+            <div className="relative mt-5 px-6 py-2 rounded-[30px]">
+              <div className="flex items-center">
+                <IoSearchOutline size={24} className="absolute left-10" />
+                <input
+                  defaultValue={"Nguyễn Hữu Cảnh, Quận 1"}
+                  placeholder="Nhập địa chỉ"
+                  className="pl-14 pr-6 py-2 outline-none shadow-btn bg-[#252525] text-[16px] lg:text-[20px] text-[#CCCCCC] rounded-[12px]"
+                />
+              </div>
+              <button className="px-6 py-2 shadow-btn bg-quik-purple rounded-[12px] mt-4 lg:ml-5 text-[16px] lg:text-[20px]">
+                Tìm kiếm
               </button>
-            </NavLink>
+            </div>
           </div>
         </div>
+        <AboutUs />
+        <SwiperList />
         <ImageSlider autoSlide={true} autoSlideInterval={2500} />
-        <WeeklyDeals />
+        {/* <WeeklyDeals /> */}
       </div>
     </>
   );

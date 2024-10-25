@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { HiOutlineMenu } from "react-icons/hi";
 import { IoCloseOutline } from "react-icons/io5";
-import QuikLogo from "../../assets/Logo Official@3x.png";
+import QuikLogo from "../../assets/logo exe 1.png";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { GoPerson } from "react-icons/go";
 import { openMenuMobileContext } from "../../context/OpenMenuMobileProvider";
@@ -126,8 +126,8 @@ const Header = () => {
         </div>
       </div>
 
-      <div className="hidden lg:block ml-auto text-lg">
-        <ul className="flex gap-14 font-semibold items-center">
+      <div className="hidden lg:block mx-auto text-lg">
+        <ul className="flex gap-10 font-semibold items-center">
           <li
             className={`${
               location.pathname === "/" &&
@@ -135,6 +135,9 @@ const Header = () => {
             } header-li`}
           >
             <NavLink to="/">Trang chủ</NavLink>
+          </li>
+          <li className="py-2 hover:text-quik-purple">
+            <NavLink to="/signup-company">Hợp tác</NavLink>
           </li>
 
           <li
@@ -170,65 +173,64 @@ const Header = () => {
               <ul>
                 <NavLink to="/allspace">
                   <li className="py-2 hover:text-quik-purple">
-                    Không gian làm việc
+                    Không gian sự kiện
                   </li>
                 </NavLink>
-                <li className="py-2 hover:text-quik-purple">Phòng họp</li>
                 <li className="py-2 hover:text-quik-purple">Study Hub</li>
                 <li className="py-2 hover:text-quik-purple">
-                  Không gian văn phòng
+                  Không gian làm việc
                 </li>
+                <li className="py-2 hover:text-quik-purple">Cafe làm việc</li>
               </ul>
             </div>
           </li>
-
-          <li className="ml-10">
-            {authContext?.isLogin === true ? (
-              <div
-                onMouseOver={() => setOpenProfile(true)}
-                onMouseLeave={() => setOpenProfile(false)}
-                className="relative border-gradient px-4 flex items-center gap-2"
-              >
-                <GoPerson size={18} />
-                <p>{localStorage.getItem("username")}</p>
-                <div
-                  className={`bg-white absolute rounded-2xl py-4 w-[180px] top-8 right-0 border-gradient shadow-btn transition-all duration-700 pl-4 ${
-                    openProfile ? "block" : "hidden"
-                  }`}
-                >
-                  <ul>
-                    <li className="py-2 hover:text-quik-purple">
-                      <NavLink to="/profile">Hồ sơ</NavLink>
-                    </li>
-
-                    <li className="py-2 hover:text-quik-purple cursor-pointer">
-                      <NavLink to="/order-history">Lịch sử giao dịch</NavLink>
-                    </li>
-                    <li
-                      onClick={onClickLogout}
-                      className="py-2 hover:text-quik-purple cursor-pointer"
-                    >
-                      Đăng xuất
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            ) : (
-              <div className="flex text-base font-bold gap-2">
-                <NavLink to="/signup-company">
-                  <button className="bg-[#506DF7] text-white hover:bg-white hover:text-[#506DF7] hover:shadow-btn hover:scale-110 px-4 py-2 rounded-3xl transition-all duration-300">
-                    Đối tác
-                  </button>
-                </NavLink>
-                <NavLink to="/signin">
-                  <button className="bg-white hover:bg-[#506DF7] hover:scale-110 hover:text-white border-solid border-[1px] px-4 py-2 rounded-3xl border-[#506DF7] text-[#506DF7] transition-all duration-300">
-                    Đăng nhập
-                  </button>
-                </NavLink>
-              </div>
-            )}
-          </li>
         </ul>
+      </div>
+      <div className="hidden lg:block">
+        {authContext?.isLogin === true ? (
+          <div
+            onMouseOver={() => setOpenProfile(true)}
+            onMouseLeave={() => setOpenProfile(false)}
+            className="relative border-gradient px-4 flex items-center gap-2"
+          >
+            <GoPerson size={18} />
+            <p>{localStorage.getItem("username")}</p>
+            <div
+              className={`bg-white absolute rounded-2xl py-4 w-[180px] top-8 right-0 border-gradient shadow-btn transition-all duration-700 pl-4 ${
+                openProfile ? "block" : "hidden"
+              }`}
+            >
+              <ul>
+                <li className="py-2 hover:text-quik-purple">
+                  <NavLink to="/profile">Hồ sơ</NavLink>
+                </li>
+
+                <li className="py-2 hover:text-quik-purple cursor-pointer">
+                  <NavLink to="/order-history">Lịch sử giao dịch</NavLink>
+                </li>
+                <li
+                  onClick={onClickLogout}
+                  className="py-2 hover:text-quik-purple cursor-pointer"
+                >
+                  Đăng xuất
+                </li>
+              </ul>
+            </div>
+          </div>
+        ) : (
+          <div className="flex text-base font-bold gap-2">
+            <NavLink to="/signup">
+              <button className="bg-[#506DF7] text-white hover:bg-white hover:text-[#506DF7] hover:shadow-btn hover:scale-110 px-4 py-2 rounded-3xl transition-all duration-300">
+                Đăng ký
+              </button>
+            </NavLink>
+            <NavLink to="/signin">
+              <button className="bg-white hover:bg-[#506DF7] hover:scale-110 hover:text-white border-solid border-[1px] px-4 py-2 rounded-3xl border-[#506DF7] text-[#506DF7] transition-all duration-300">
+                Đăng nhập
+              </button>
+            </NavLink>
+          </div>
+        )}
       </div>
     </nav>
   );
