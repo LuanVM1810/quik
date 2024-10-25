@@ -136,7 +136,12 @@ const Header = () => {
           >
             <NavLink to="/">Trang chủ</NavLink>
           </li>
-          <li className="py-2 hover:text-quik-purple">
+          <li
+            className={`${
+              location.pathname === "/signup-company" &&
+              "border-2 border-[#506DF7] text-[#506df7]"
+            } header-li`}
+          >
             <NavLink to="/signup-company">Hợp tác</NavLink>
           </li>
 
@@ -191,12 +196,12 @@ const Header = () => {
           <div
             onMouseOver={() => setOpenProfile(true)}
             onMouseLeave={() => setOpenProfile(false)}
-            className="relative border-gradient px-4 flex items-center gap-2"
+            className="relative border-gradient px-4 text-[16px] flex items-center gap-2"
           >
             <GoPerson size={18} />
             <p>{localStorage.getItem("username")}</p>
             <div
-              className={`bg-white absolute rounded-2xl py-4 w-[180px] top-8 right-0 border-gradient shadow-btn transition-all duration-700 pl-4 ${
+              className={`bg-white absolute rounded-2xl py-4 w-[180px] top-[26px] right-0 border-gradient shadow-btn transition-all duration-700 pl-4 ${
                 openProfile ? "block" : "hidden"
               }`}
             >

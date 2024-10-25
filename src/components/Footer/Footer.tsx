@@ -15,13 +15,11 @@ const Footer = () => {
         <div className="flex flex-col max-w-[300px]">
           <img src={Logo} width={64} height={64} />
           <div className="leading-8">
-            Trên trang web đặt phòng họp, bạn sẽ tìm thấy một không gian trực
-            tuyến linh hoạt và tiện lợi, cho phép bạn dễ dàng chọn lựa phòng họp
-            phù hợp với nhu cầu của mình. Giao diện trang web được thiết kế đẹp
-            mắt và dễ sử dụng, cung cấp thông tin chi tiết về các phòng họp, bao
-            gồm kích thước, tiện nghi, và giá cả. Đặt phòng họp trở nên đơn giản
-            chỉ trong vài bước với trải nghiệm mượt mà và thuận tiện trên mọi
-            thiết bị di động.
+            QUIK ra đời với sứ mệnh đơn giản hóa việc tìm kiếm và đặt chỗ các
+            không gian làm việc chung, working cafe, study hub, meeting room và
+            không gian tổ chức sự kiện, mang đến sự linh hoạt và tiện lợi tối đa
+            đáp ứng mọi nhu cầu từ doanh nghiệp, freelancer, các đội nhóm
+            startup cho đến học sinh, sinh viên.
           </div>
         </div>
         <div className="leading-8">

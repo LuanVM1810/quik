@@ -4,7 +4,7 @@ const AboutUs = () => {
   return (
     <>
       <div className="bg-[#F0EFEF] h-auto my-[-20px] lg:my-[-40px] mx-[-16px] lg:mx-[-32px]">
-        <div className="text-center my-10 text-[40px] text-quik-purple font-bold">
+        <div className="text-center py-16 text-[40px] text-quik-purple font-bold">
           Về chúng tôi
         </div>
         <div className="px-10 lg:px-20 leading-8 lg:text-[20px] text-quik-purple font-medium">

@@ -23,7 +23,7 @@ const schema = yup.object().shape({
 });
 type FormData = yup.InferType<typeof schema>;
 
-const SingIn = () => {
+const SignIn = () => {
   const {
     register,
     handleSubmit,
@@ -155,4 +155,4 @@ const SingIn = () => {
   );
 };
 
-export default SingIn;
+export default SignIn;

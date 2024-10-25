@@ -1,20 +1,15 @@
-import { ReactNode } from "react";
 import { Navigate } from "react-router-dom";
 interface Props {
-  children: ReactNode;
+  children: JSX.Element;
   isAllowed: boolean;
-  token: string;
 }
 
-const ProtectedRoute = ({ children, isAllowed, token }: Props) => {
-  if (!token) {
-    return <Navigate to="/" />;
-  }
+const ProtectedRoute = ({ children, isAllowed }: Props) => {
   if (isAllowed) {
     return children;
   }
 
-  return <Navigate to="/404" />;
+  return <Navigate to="/" />;
 };
 
 export default ProtectedRoute;
