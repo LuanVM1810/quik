@@ -1,9 +1,10 @@
-import { useEffect, useReducer } from "react";
+import { useEffect, useReducer, useState } from "react";
 import RoomList from "../components/RoomList/RoomList";
 import Search from "../components/Search/Search";
 import Loading from "../components/Loading/Loading";
 import { Pagination } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { useLocation } from "react-router-dom";
 import workingSpaceApi from "../services/WorkingSpaceApi";
 
 const theme = createTheme({
@@ -39,19 +40,25 @@ const allSpaceReducer = (state: any, action: any) => {
         data: [],
         error: action.data,
       };
+    case "SEARCH_SPACE":
+      return {
+        ...state,
+        loading: false,
+        data: action.data,
+      };
   }
 };
 
 const AllSpace = () => {
+  const location = useLocation();
+  const state = location.state;
+  const [searchValue, setSearchValue] = useState(state);
   const [allspaces, allSpaceDispatch] = useReducer(allSpaceReducer, initState);
 
   useEffect(() => {
-    allSpaceDispatch({
-      type: "GET_ALLSPACE_REQUEST",
-    });
     const fetchData = async () => {
       try {
-        const fetchWorkingSpace = await workingSpaceApi.getAll();
+        const fetchWorkingSpace = await workingSpaceApi.search(searchValue);
         allSpaceDispatch({
           type: "GET_ALLSPACE_SUCCESS",
           data: fetchWorkingSpace.data,
@@ -62,9 +69,9 @@ const AllSpace = () => {
       }
     };
     fetchData();
-  }, []);
+  }, [searchValue, state]);
 
-  // console.log(allspaces.data);
+  //   console.log(allspaces.data);
 
   return (
     <div className="mb-10">
@@ -72,7 +79,11 @@ const AllSpace = () => {
         <Loading />
       ) : (
         <div>
-          <Search placeholder="Tìm kiếm" />
+          <Search
+            searchValue={searchValue}
+            setSearchValue={setSearchValue}
+            placeholder="Tìm kiếm qua địa chỉ"
+          />
           <RoomList roomList={allspaces.data} />
         </div>
       )}

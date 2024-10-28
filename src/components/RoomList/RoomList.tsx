@@ -10,7 +10,7 @@ type Props = {
 };
 
 const RoomList = ({ roomList }: Props) => {
-  console.log(roomList);
+  // console.log(roomList);
   return (
     <>
       <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-5">

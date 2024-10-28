@@ -43,7 +43,7 @@ const Category = () => {
                 <img
                   className="hover:scale-95 transition-all duration-300"
                   src={item.img}
-                  width={320}
+                  width={280}
                   height={631}
                 />
               </li>

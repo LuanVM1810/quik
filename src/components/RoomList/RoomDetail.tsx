@@ -8,7 +8,7 @@ import { GoPeople } from "react-icons/go";
 import { useState } from "react";
 import { useEffect } from "react";
 import { Dayjs } from "dayjs";
-import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
+import { DemoItem } from "@mui/x-date-pickers/internals/demo";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DateTimePicker } from "@mui/x-date-pickers/DateTimePicker";
@@ -21,6 +21,9 @@ import reviewApi from "../../services/ReviewApi";
 import { Review } from "../../interfaces/ReviewInterface";
 import parseDate from "../../utils/parseDate";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import bookingApi from "../../services/bookingApi";
+import { AiOutlineLoading } from "react-icons/ai";
+import { toast } from "sonner";
 
 const theme = createTheme({
   palette: {
@@ -32,14 +35,12 @@ const theme = createTheme({
 
 export default function RoomDetail() {
   const { roomId } = useParams();
-  // const [numberRoom, setNumberRoom] = useState<number | null>(null);
-  const [numberPeople, setNumberPeople] = useState<number | null>(null);
-  const [date, setDate] = useState<Dayjs | null>(null);
+  const [numberPeople, setNumberPeople] = useState<number>();
+  const [startDate, setStartDate] = useState<Dayjs | null>(null);
+  const [endDate, setEndDate] = useState<Dayjs | null>(null);
   const [roomDetail, setRoomDetail] = useState<WorkingSpaceDetail>();
   const [reviews, setReviews] = useState<Review>();
-
-  // console.log(roomId);
-  // console.log(date);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -57,20 +58,34 @@ export default function RoomDetail() {
     fetchData();
   }, [roomId, roomDetail, reviews]);
 
-  // const onChangeNumberRoom = (
-  //   e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  // ) => {
-  //   setNumberRoom(parseInt(e.target.value));
-  // };
-
   const onChangeNumberPeople = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setNumberPeople(parseInt(e.target.value));
   };
 
-  // console.log(reviews);
-  console.log(roomDetail);
+  const submitBooking = () => {
+    setIsLoading(true);
+    bookingApi
+      .createBooking({
+        bookingId: "123",
+        numberOfPeople: numberPeople,
+        startTime: startDate?.toDate(),
+        endTime: endDate?.toDate(),
+        spaceId: roomId,
+        username: localStorage.getItem("username"),
+      })
+      .then((response) => {
+        setIsLoading(false);
+        // console.log(response.data.data);
+        toast.success(response.data.message);
+      })
+      .catch((error) => {
+        setIsLoading(false);
+        // console.log(error);
+        toast.error(error);
+      });
+  };
 
   return (
     <div className="text-[#111111] min-h-screen py-[40px] lg:px-[150px]">
@@ -115,7 +130,7 @@ export default function RoomDetail() {
                 <GoPeople size={24} />
               </p>
               <TextField
-                className="w-[270px]"
+                className="w-[258px]"
                 value={numberPeople}
                 onChange={onChangeNumberPeople}
                 label="Số lượng người"
@@ -125,25 +140,51 @@ export default function RoomDetail() {
                 type="number"
               />
             </div>
+
             <div className="mb-5 flex gap-5 items-center">
               <p className="flex items-center">
                 <CiClock2 size={24} />
               </p>
               <LocalizationProvider dateAdapter={AdapterDayjs}>
-                <DemoContainer
-                  components={["DateTimePicker", "DateTimePicker"]}
-                >
+                <DemoItem>
                   <DateTimePicker
-                    label="Chọn ngày và giờ"
-                    value={date}
-                    onChange={(newValue) => setDate(newValue)}
+                    label="Chọn ngày và giờ bắt đầu"
+                    value={startDate}
+                    onChange={(newValue) => setStartDate(newValue)}
                   />
-                </DemoContainer>
+                </DemoItem>
               </LocalizationProvider>
             </div>
 
-            <button className="bg-[#506DF7] hover:opacity-80 py-2 rounded-3xl w-full font-medium text-base text-white">
-              Đặt ngay
+            <div className="mb-5 flex gap-5 items-center">
+              <p className="flex items-center">
+                <CiClock2 size={24} />
+              </p>
+              <LocalizationProvider dateAdapter={AdapterDayjs}>
+                <DemoItem>
+                  <DateTimePicker
+                    label="Chọn ngày và kết thúc"
+                    value={endDate}
+                    onChange={(newValue) => setEndDate(newValue)}
+                  />
+                </DemoItem>
+              </LocalizationProvider>
+            </div>
+
+            <button
+              onClick={() => submitBooking()}
+              disabled={isLoading ? true : false}
+              className={` ${
+                isLoading ? "bg-black" : "bg-[#506DF7]"
+              }  hover:opacity-80 py-2 rounded-3xl w-full font-medium text-base text-white`}
+            >
+              {isLoading ? (
+                <div className="flex justify-center">
+                  <AiOutlineLoading size={24} className="animate-spin" />
+                </div>
+              ) : (
+                "Đăng ký"
+              )}
             </button>
             <p className="py-5 text-left leading-8">
               Phòng này hiện đại và ấm áp với sự kết hợp giữa tông màu trắng và

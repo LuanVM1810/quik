@@ -9,6 +9,10 @@ const workingSpaceApi = {
     const url = `/WorkingSpace/GetById/${spaceId}`;
     return axiosClient.get(url);
   },
+  search: (location: string) => {
+    const url = `/WorkingSpace/search?location=${location}`;
+    return axiosClient.get(url);
+  },
 };
 
 export default workingSpaceApi;

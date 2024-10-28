@@ -3,8 +3,23 @@ import { IoSearchOutline } from "react-icons/io5";
 // import WeeklyDeals from "../components/WeeklyDeals/WeeklyDeals";
 import AboutUs from "../components/AboutUs/AboutUs";
 import SwiperList from "../components/Swiper/SwiperList";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
+  const [searchByLocation, setSearchByLocation] = useState("");
+  const navigate = useNavigate();
+
+  const onChangeSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchByLocation(e.target.value);
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    await e.preventDefault();
+    navigate(`/allspace`, {
+      state: searchByLocation,
+    });
+  };
   return (
     <>
       <div className="flex flex-col gap-5 lg:gap-10">
@@ -23,19 +38,25 @@ const HomePage = () => {
           <div className="absolute flex flex-col items-center text-white">
             <p className="lg:text-[32px] uppercase">Meet đâu không khó, </p>
             <p className="lg:text-[32px] uppercase">book QUIK khỏi lo</p>
-            <div className="relative mt-5 px-6 py-2 rounded-[30px]">
-              <div className="flex items-center">
-                <IoSearchOutline size={24} className="absolute left-10" />
-                <input
-                  defaultValue={"Nguyễn Hữu Cảnh, Quận 1"}
-                  placeholder="Nhập địa chỉ"
-                  className="pl-14 pr-6 py-2 outline-none shadow-btn bg-[#252525] text-[16px] lg:text-[20px] text-[#CCCCCC] rounded-[12px]"
-                />
+            <form onSubmit={handleSubmit}>
+              <div className="relative mt-5 px-6 py-2 rounded-[30px]">
+                <div className="flex items-center">
+                  <IoSearchOutline size={24} className="absolute left-10" />
+                  <input
+                    value={searchByLocation}
+                    onChange={onChangeSearch}
+                    placeholder="Nhập địa chỉ"
+                    className="pl-14 pr-6 py-2 outline-none shadow-btn bg-[#252525] text-[16px] lg:text-[20px] text-[#CCCCCC] rounded-[12px]"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="px-6 py-2 shadow-btn bg-quik-purple rounded-[12px] mt-4 lg:ml-5 text-[16px] lg:text-[20px]"
+                >
+                  Tìm kiếm
+                </button>
               </div>
-              <button className="px-6 py-2 shadow-btn bg-quik-purple rounded-[12px] mt-4 lg:ml-5 text-[16px] lg:text-[20px]">
-                Tìm kiếm
-              </button>
-            </div>
+            </form>
           </div>
         </div>
         <AboutUs />
