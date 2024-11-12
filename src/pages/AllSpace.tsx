@@ -58,7 +58,9 @@ const AllSpace = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const fetchWorkingSpace = await workingSpaceApi.search(searchValue);
+        const fetchWorkingSpace = await workingSpaceApi.search(
+          searchValue ?? ""
+        );
         allSpaceDispatch({
           type: "GET_ALLSPACE_SUCCESS",
           data: fetchWorkingSpace.data,
