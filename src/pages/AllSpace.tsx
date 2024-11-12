@@ -52,15 +52,15 @@ const allSpaceReducer = (state: any, action: any) => {
 const AllSpace = () => {
   const location = useLocation();
   const state = location.state;
-  const [searchValue, setSearchValue] = useState(state);
+  const [searchValue, setSearchValue] = useState(state ?? "");
   const [allspaces, allSpaceDispatch] = useReducer(allSpaceReducer, initState);
+
+  // console.log(state);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const fetchWorkingSpace = await workingSpaceApi.search(
-          searchValue ?? ""
-        );
+        const fetchWorkingSpace = await workingSpaceApi.search(searchValue);
         allSpaceDispatch({
           type: "GET_ALLSPACE_SUCCESS",
           data: fetchWorkingSpace.data,
