@@ -2,7 +2,7 @@ import axios from "axios";
 // import { isEmpty } from "lodash";
 
 const axiosClient = axios.create({
-  baseURL: "https://localhost:7204/api",
+  baseURL: "https://note-now.website/api",
   headers: {
     "Content-Type": "application/json",
   },
