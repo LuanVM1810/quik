@@ -20,31 +20,31 @@ const slider = [
   {
     id: 1,
     name: "PERCE%T Coffee",
-    img: "https://s3-alpha-sig.figma.com/img/71ff/2ceb/c6e43fb82b4cb6173e08aa191727a584?Expires=1730678400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=TCfAMICbolMUND~MTW~EuzqpHDxEd0vPHufq0Bcl90gHDiFYFZwSc8dOvvUaM8KGJqsBLVCMp1O2S938t8rozGlXER76wt90ik1CqWYBpciSLOn1E6kFEjvEvsTox5mbwFquvbmjPl2E8yGyG~-gNaValVUX0pzmLiedVDHuIAkR2c7OhHrjomsOWKukZ3-fLe~WQPo~bve1ErWYLui0Aux8YCm4dqil81mp9UF41QFHc8m79EnQ4eqFXUfvCRNthlOrxsJSyvq4UXAwvoy0nk15ozK6C8bajqiotO9nB~lAuQys6fDXE7VdbX4Uix7nlphlDqU7BBD9I71dhK6-Fw__",
+    img: "https://s3-alpha-sig.figma.com/img/71ff/2ceb/c6e43fb82b4cb6173e08aa191727a584?Expires=1732492800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=XqhJEEL3P1KeusEVUjtfNRqxABFGS8suzlV24rGiss9TKSQrPmtUyaxMLCazaTUk8VqCeF9egqOagf-iOxoGVEjauW4Zmm8dT5aStWy3BU3iV0e1N3ua-iNnsrXcuLugsgbnQsRtf0b6sT3OqYO-hbe5G-wxGk67LuF5yIDW~f4ZHuRcv23ZDVpII-NMbaA9mH2mdUexTUL~rijuE8O5wchTJoDlnDtnlKe8ab-Ns~rg7xC3IllotLX3w4UZDyyEzl9muu4FxzntxlPjR505zRMoZh~Q8UXW6h~it~CUR9jVdRI9j-Qq8qHKUxLjr3G6TQ9GLEzZdJ7QfdSnBEmxUQ__",
     rating: "4.5",
   },
   {
     id: 2,
     name: "Serepok",
-    img: "https://s3-alpha-sig.figma.com/img/1694/703a/fe6ad41e206e0fa26e518b5ee404ac96?Expires=1730678400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=nzebEaWdEPlK6O2VB7MQq7P3AbPadC5ol1b2fbW8n2sIB8Jd9gbngBJMIbyXP0Fej1E3Cln2yKKUxwoMgmSIJ0wRTNprq9LQQEZfC5lwu-k7gtQd~fRrQNzJx5xJSg9OJP9JVbwAm7TlCjtE0F7mD570WgDIlLHFHAgwgQRMe6J61-DbQTYnM8hbfD5nNrEfwk0B1iVrMbQ~oWaXFsMsRzHGjpZbsnuWtsVSiAR54ztOJuBti-f1FnPGKHEg2tNRAyT00z~7wVf79tVUpzGASO1ZjBekKDzRy~1mXFDj9Px-v0eROr051XNd9vhgVxJZ~YLJoWEumZLL8t4U92hNEw__",
+    img: "https://s3-alpha-sig.figma.com/img/1694/703a/fe6ad41e206e0fa26e518b5ee404ac96?Expires=1732492800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=MuJAS7SJsecSSc-XRcGhumTc1t5dQPw6ALq5zSHC1VTyVsGAjNnNYe4~CHM7vnAdMhzN3FcjrRQgnVxCCfUBt8tYG83coyEG-TgO7KGU69~DK0Ws-CXJMnExbZx6frpgRP6DcG0n44oEN71-zLVWouWZKKlO0pEpA86ofIvLP9QY9U4IpHlTVqBXqIinsIXtHHiSJcxfTjxO7lOf8nr~CaiXcNmwgcVodnLmCE~4j-I7wI3pwfp3o6QDBjCcUE3n0gKnvtQJvULZzAtv8AOaBxCzEKh6jzB~ATbvBeVtz21-g~0yldd1snicHET0Af4N2jujoomRlyyO1bw0QsVD-A__",
     rating: "4.3",
   },
   {
     id: 3,
     name: "The Xi Cafe",
-    img: "https://s3-alpha-sig.figma.com/img/f27d/c8f7/71b8db6b0cb031909dee264eaf0505ca?Expires=1730678400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Havl3b7SCm~ZpAgDfacX7QFr62~ZZSUETMsPe-Wb25Q7smRftiTMGfde3LR8Swc2H4qA8doXYJVJ6X9wBK2Vq10Z0kAIKw23BrT3cHx6vUcI79BMupAsRKdqnKy1twTAmHJBj8NBWxAjlNudGDJcGCRWjiwHZj3L76cPHWZRlDiV5EmIh~tToGjBMP3nQqJHWOBhD4w4R~Nz~sfJnisFm7oSQOYq~usVE7IUqlkXDDn-FLwAGzbUDDP7kdHV-UjdZuZyxw5g~BSyCkwNRT4ddypWZoPqjlxbbkyFabsrcq77ATymRdobrEEv0aG4Z3l6A2~rfZWYvdRbmTNW47bofA__",
+    img: "https://s3-alpha-sig.figma.com/img/f27d/c8f7/71b8db6b0cb031909dee264eaf0505ca?Expires=1732492800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=fceXrGObIsdwKp~0hrpYCyWkBS~EB5sdlTtjZJbHtuU7AIPhPDWoI23mcLNu4334F2a7m4uWcKiOMon6eYa1wQjG02f2hSaa844g6lqdgqv-fR79YRpXM7C7jRcURIGN~UMeZPjswHkj7Huk0caiQ7VJsY59g7uMiCEF6QZBi-Iq-nn7UJrkA0-J2cHqvJWoyL4NmVuOPnSma6VW-XvgSNxQOfckQr9oe8GiYKSQJlWgHU792OVPc~i5Sj1GyOJuCXHag~E6IPvA~3fBxgDAuwxAGJJj44tA9Ecw6e8bFUK9V834~Rg1FX4irVY8D5ks-k~7Y8N1tn2uNs61RhjU9A__",
     rating: "4.8",
   },
   {
     id: 4,
     name: "Saha Coffee",
-    img: "https://s3-alpha-sig.figma.com/img/cee8/1493/6b305fa030f83d6a394ab58c1cf572a2?Expires=1730678400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=oZ~frKXpXIgCtwfHSFVbAM067TwKLwKcm1rCBypK~B8KgWMHlmH0u27N7w8dAAs6pUpRKO82xKX0OCL3Fxpbl4~hgroQZHVFRxhER1JzjdML7Ip7CTp7JamvRX6K~1vy2Wv8nagfl6KsaNrLxl9s-jOvQnngHpDWB61FpAKWC05afqrlqQrBlbdlD6TAl0rxB-L52kmAPUZfqFdnMdockXee5xEU9Gksox-YN~WrTOS6Q6PqVM4d9hj9w9513FA9ZJlhAvO0Pl8zn4YwHx~xT~XtAMsJof0qbg2yKzXzwBQSEg~rmYgSBY4TrLlUClfEr0XnjP9TVXWIwzB1XPidSg__",
+    img: "https://s3-alpha-sig.figma.com/img/cee8/1493/6b305fa030f83d6a394ab58c1cf572a2?Expires=1732492800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Yk3de9O1WwuODUyBtlikakuBaj4~XvMgn5~5qB9tMFZIg0qdoV--k9TROCxixyvpIml9pk1S6JgC7UBYjKcU7tLYZ5ZcAqMjJQwE-Cfk88VS~2W0yiCmIc1RS5VQ2-IqXNGNZgeDnb8rfzsI3pOZ3lBdTVwEHbTuBX4HwGbNFWSfONoBU2XFm7FJyUslUOjo5Fh8ysCVUO98-uo6R74c0ZwWsXb3M5zQDc3Q5U9a~Djl335W0Iz~S~1~MHcWf8W-sx~DvTmhfQUxS3QXmdnWIBuYCXk3xHBeWkwJn6Ex-Cr6axkA01HlBpASooNkhzRZ6cXnYKZwCMbyhGZtnEZnkg__",
     rating: "4.9",
   },
   {
     id: 5,
     name: "Plantrip Thé Des Arts",
-    img: "https://s3-alpha-sig.figma.com/img/d3de/4573/4b812486a0846f4312b31d4432701a96?Expires=1730678400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=nnKyZ-aYiGjbD4AZjYZjREX0noyB0rTjtChmT3krJ7MdD3ni15Kx7ZbNhFZOCYkr4tbINSwc007RpeuX6wIUWUxiVsDL8SyWVdVAArGsQlIWQ3wTBqi90Zr-3z105qyZNbvxy8Sl-9KaUbnu9MUKN39dOSDour8lyo1jPQ~OIJjR-Zi10k72ywR0S3oJxQj1nvXU3-w2lvmbFQYu7-IhWzpKeUxwJXQObg-OiCSqyvLkRrevkcAt4A56m63OONSWwXNQMUPyH1vNdFP4~1sxEGZl62Ef8GwJfVcIFr2e8d~18MDz91x6VCt5HD~HTyLnF6G2EXbeNMQ4HuVVCs7o4Q__",
+    img: "https://s3-alpha-sig.figma.com/img/d3de/4573/4b812486a0846f4312b31d4432701a96?Expires=1732492800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=BYE8wdT-VHHEGYcgIIFPoYN3qa8KtqgMJoBorirKXxsV6m3r92xQKf~TKZV9Y6Yl1e-jMp1kBDL8aeFsUqTb8z5sG7X9MTDtkwLOBddXUvjC9Wqv92bcXPmY44ZJr~Caw-1VIgekYn2cRmaYtNv-qwdiK0ipZ3AxwbHTKkpUO-BCDWJEZIU9N-UHw0jL0CwultXqxqQ9JL1xgqQJanW4aNt~05bKFwG26OUr81Vh4ENj5FmVE8HuoPz5GPJwj~tHAcJMuzClAJQp6nN9zvJ0PRjh~8L1GicyKPW7Swl7nh24YTG6-gVREg~BLL6Zp~IGXPcKdmacZk0AxtBkRyZ9Pg__",
     rating: "4.2",
   },
 ];
