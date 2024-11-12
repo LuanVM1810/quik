@@ -1,8 +1,10 @@
 import axios from "axios";
 // import { isEmpty } from "lodash";
 
+const apiUrl = import.meta.env.VITE_API_URL as string;
+
 const axiosClient = axios.create({
-  baseURL: import.meta.env.BASE_URL,
+  baseURL: apiUrl,
   headers: {
     "Content-Type": "application/json",
   },
