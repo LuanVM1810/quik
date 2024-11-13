@@ -19,8 +19,9 @@ const RoomList = ({ roomList }: Props) => {
             <div className="flex flex-col bg-white p-3 gap-[8px] rounded-2xl shadow-room cursor-pointer hover:-translate-y-2 transition-all duration-300">
               <div className="h-[150px] md:h-[200px] lg:h-[250px] relative">
                 <img
+                  loading="lazy"
                   className="rounded-xl h-full w-full object-cover"
-                  src={item.imageId}
+                  src={item.imageUrls[0]}
                 />
                 <span className="absolute cursor-pointer top-3 right-3 bg-[#1B1E28]/40 hover:bg-[#1b1e28]/80 p-2 rounded-full">
                   <FaRegHeart size={"16px"} color="white" />

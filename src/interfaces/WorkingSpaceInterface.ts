@@ -11,7 +11,7 @@ export interface WorkingSpace {
   capacity: number;
   location: string;
   image: null;
-  imageUrls: any[];
+  imageUrls: string[];
 }
 
 export interface WorkingSpaceDetail extends WorkingSpace {

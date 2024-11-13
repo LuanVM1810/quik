@@ -181,7 +181,9 @@ const Header = () => {
                     Không gian sự kiện
                   </li>
                 </NavLink>
-                <li className="py-2 hover:text-quik-purple">Study Hub</li>
+                <NavLink to="/studyhub">
+                  <li className="py-2 hover:text-quik-purple">Study Hub</li>
+                </NavLink>
                 <li className="py-2 hover:text-quik-purple">
                   Không gian làm việc
                 </li>

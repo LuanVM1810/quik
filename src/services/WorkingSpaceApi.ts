@@ -10,7 +10,7 @@ const workingSpaceApi = {
     return axiosClient.get(url);
   },
   search: (location: string) => {
-    const url = `/WorkingSpace/search?location=${location}`;
+    const url = `/WorkingSpace/GetAll?location=${location}`;
     return axiosClient.get(url);
   },
 };

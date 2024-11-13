@@ -9,21 +9,25 @@ const infor = [
     id: 1,
     title: "Không gian sự kiện",
     img: KhongGianSuKienImg,
+    link: "/allspace",
   },
   {
     id: 2,
     title: "Study Hub",
     img: StudyHubImg,
+    link: "/studyhub",
   },
   {
     id: 3,
     title: "Không gian làm việc",
     img: KhongGianLamViecImg,
+    link: "/allspace",
   },
   {
     id: 4,
     title: "Cafe làm việc",
     img: CafeLamViecImg,
+    link: "/studyhub",
   },
 ];
 const Category = () => {
@@ -32,7 +36,7 @@ const Category = () => {
       <div className="px-10 my-20 lg:px-20">
         <ul className="flex flex-col gap-10 lg:gap-6 lg:flex-row flex-wrap">
           {infor.map((item) => (
-            <NavLink to="/allspace">
+            <NavLink to={item.link}>
               <li className="flex flex-col items-center gap-4">
                 <div
                   key={item.id}

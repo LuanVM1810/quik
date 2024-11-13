@@ -107,7 +107,11 @@ export default function RoomDetail() {
             </p>
           </div>
           <div className="w-full lg:row-span-2 lg:col-span-2 lg:justify-start">
-            <ImageSlider autoSlide={true} autoSlideInterval={2500} />
+            <ImageSlider
+              autoSlide={true}
+              autoSlideInterval={2500}
+              slider={roomDetail?.imageUrls}
+            />
           </div>
           <div className="mt-5 lg:row-start-2">
             {/* <div className="flex gap-5 pt-[8px] mb-5 items-center">
@@ -183,7 +187,7 @@ export default function RoomDetail() {
                   <AiOutlineLoading size={24} className="animate-spin" />
                 </div>
               ) : (
-                "Đăng ký"
+                "Đặt ngay"
               )}
             </button>
             <p className="py-5 text-left leading-8">

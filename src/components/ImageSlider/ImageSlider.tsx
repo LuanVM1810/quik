@@ -1,26 +1,28 @@
 import { useEffect, useState } from "react";
-import { slider } from "../../constants";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
-import { RxDotFilled } from "react-icons/rx";
+// import { RxDotFilled } from "react-icons/rx";
 
 type Props = {
   autoSlide: boolean;
   autoSlideInterval: number;
+  slider: string[] | undefined;
 };
 
-const ImageSlider = ({ autoSlide, autoSlideInterval }: Props) => {
+const ImageSlider = ({ autoSlide, autoSlideInterval, slider }: Props) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const prevSilde = () => {
-    setCurrentIndex((currentIndex) =>
-      currentIndex === 0 ? slider.length - 1 : currentIndex - 1
-    );
+    if (slider != undefined)
+      setCurrentIndex((currentIndex) =>
+        currentIndex === 0 ? slider.length - 1 : currentIndex - 1
+      );
   };
 
   const nextSlide = () => {
-    setCurrentIndex((currentIndex) =>
-      currentIndex === slider.length - 1 ? 0 : currentIndex + 1
-    );
+    if (slider != undefined)
+      setCurrentIndex((currentIndex) =>
+        currentIndex === slider.length - 1 ? 0 : currentIndex + 1
+      );
   };
   useEffect(() => {
     if (!autoSlide) return;
@@ -28,14 +30,14 @@ const ImageSlider = ({ autoSlide, autoSlideInterval }: Props) => {
     return () => clearInterval(slideInterval);
   }, []);
 
-  const gotoSlide = (slideIndex: number) => {
-    setCurrentIndex(slideIndex);
-  };
+  // const gotoSlide = (slideIndex: number) => {
+  //   setCurrentIndex(slideIndex);
+  // };
 
   return (
     <div className="max-w-[1400px] h-[600px] lg:h-[650px] w-full m-auto my-16 px-4 relative group">
       <div
-        style={{ backgroundImage: `url(${slider[currentIndex].url})` }}
+        style={{ backgroundImage: `url(${slider ?? [currentIndex]})` }}
         className="w-full h-full rounded-2xl bg-center bg-cover duration-500"
       ></div>
       {/* Left Arrow*/}
@@ -52,22 +54,22 @@ const ImageSlider = ({ autoSlide, autoSlideInterval }: Props) => {
       >
         <BsChevronCompactRight size={30} />
       </div>
-      <div className={`flex top-4 justify-center py-2`}>
-        {slider.map((slide) => (
+      {/* <div className={`flex top-4 justify-center py-2`}>
+        {slider?.map((index, slide) => (
           <div
-            key={slide.id}
+            key={slide}
             onClick={() => {
               gotoSlide(slide.id);
             }}
             className={` ${
-              currentIndex === slide.id &&
+              currentIndex === slide[index] &&
               `text-quik-purple scale-150 transition-all duration-500`
             } text-2xl cursor-pointer`}
           >
             <RxDotFilled key={slide.url} />
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };

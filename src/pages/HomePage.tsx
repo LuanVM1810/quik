@@ -1,4 +1,3 @@
-import ImageSlider from "../components/ImageSlider/ImageSlider";
 import { IoSearchOutline } from "react-icons/io5";
 // import WeeklyDeals from "../components/WeeklyDeals/WeeklyDeals";
 import AboutUs from "../components/AboutUs/AboutUs";
@@ -61,7 +60,11 @@ const HomePage = () => {
         </div>
         <AboutUs />
         <SwiperList />
-        <ImageSlider autoSlide={true} autoSlideInterval={2500} />
+        {/* <ImageSlider
+          autoSlide={true}
+          autoSlideInterval={2500}
+          slider={slider}
+        /> */}
         {/* <WeeklyDeals /> */}
       </div>
     </>
