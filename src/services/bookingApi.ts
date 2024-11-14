@@ -7,7 +7,7 @@ const bookingApi = {
     return axiosClient.post(url, data);
   },
   getBookingOfSaptoi: (username: string | null) => {
-    const url = `/Booking/GetBookingOfSapToi/${username}`;
+    const url = `/Booking/GetAllBookingsByUsername/${username}`;
     return axiosClient.get(url);
   },
 };

@@ -4,17 +4,17 @@ import bookingApi from "../services/bookingApi";
 import { BookingList } from "../interfaces/BookingInterface";
 
 const OrderHistoryPage = () => {
-  const [orderStatus, setOrderStatus] = useState("pending");
+  const [orderStatus, setOrderStatus] = useState("Chưa thanh toán");
   const username = localStorage.getItem("username");
   const [bookingList, setBookingList] = useState<BookingList[]>([]);
   const orderPending = () => {
-    setOrderStatus("pending");
+    setOrderStatus("Chưa thanh toán");
   };
   const orderSuccess = () => {
-    setOrderStatus("success");
+    setOrderStatus("Đã thanh toán");
   };
   const orderCancel = () => {
-    setOrderStatus("cancel");
+    setOrderStatus("Đã hủy");
   };
 
   const fetchBooking = async () => {
@@ -31,6 +31,11 @@ const OrderHistoryPage = () => {
     fetchBooking();
   });
 
+  const filterBookingList = bookingList.filter(
+    (item) => item.status == orderStatus
+  );
+  // console.log(filterBookingList);
+
   return (
     <div className="lg:grid lg:grid-cols-3 py-[40px] lg:min-h-screen">
       <div className="ml-2 lg:text-[20px] lg:col-span-1 lg:mr-20">
@@ -38,7 +43,7 @@ const OrderHistoryPage = () => {
           <li
             onClick={orderPending}
             className={`px-[16px] py-[12px] mx-1 border-b-2 cursor-pointer ${
-              orderStatus === "pending" &&
+              orderStatus === "Chưa thanh toán" &&
               `border-[#506DF7] text-[#506DF7] font-bold`
             }`}
           >
@@ -47,7 +52,7 @@ const OrderHistoryPage = () => {
           <li
             onClick={orderSuccess}
             className={`px-[16px] py-[12px] mx-1 border-b-2 cursor-pointer ${
-              orderStatus === "success" &&
+              orderStatus === "Đã thanh toán" &&
               `border-[#506DF7] text-[#506DF7] font-bold`
             }`}
           >
@@ -56,7 +61,7 @@ const OrderHistoryPage = () => {
           <li
             onClick={orderCancel}
             className={`px-[16px] py-[12px] mx-1 border-b-2 cursor-pointer ${
-              orderStatus === "cancel" &&
+              orderStatus === "Đã hủy" &&
               `border-[#506DF7] text-[#506DF7] font-bold`
             }`}
           >
@@ -65,7 +70,7 @@ const OrderHistoryPage = () => {
         </ul>
       </div>
       <div className="lg:col-span-2">
-        <OrderHistoryList bookingList={bookingList} />
+        <OrderHistoryList bookingList={filterBookingList} />
       </div>
     </div>
   );

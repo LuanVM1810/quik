@@ -21,4 +21,11 @@ export interface BookingList {
   remainingAmount: number;
   location: string;
   status: string;
+  businessName: string;
+  title: string;
+  description: string;
+  pricePerHour: number;
+  roomType: string;
+  capacity: number;
+  imageUrl: undefined | string;
 }

@@ -6,6 +6,7 @@ import { Pagination } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useLocation } from "react-router-dom";
 import workingSpaceApi from "../services/WorkingSpaceApi";
+import EmptyList from "../components/EmptyList/EmptyList";
 
 const theme = createTheme({
   palette: {
@@ -59,6 +60,9 @@ const AllSpace = () => {
 
   useEffect(() => {
     const fetchData = async () => {
+      allSpaceDispatch({
+        type: "GET_ALLSPACE_REQUEST",
+      });
       try {
         const fetchWorkingSpace = await workingSpaceApi.search(searchValue);
         allSpaceDispatch({
@@ -66,14 +70,14 @@ const AllSpace = () => {
           data: fetchWorkingSpace.data,
         });
       } catch (error) {
-        allSpaceDispatch({ type: "GET_ALLSPACE_ERROR", data: error });
+        allSpaceDispatch({ type: "GET_ALLSPACE_ERROR" });
         console.log(error);
       }
     };
     fetchData();
   }, [searchValue, state]);
 
-  //   console.log(allspaces.data);
+  // console.log(allspaces.data);
 
   return (
     <div className="mb-10">
@@ -82,11 +86,14 @@ const AllSpace = () => {
       ) : (
         <div>
           <Search
-            searchValue={searchValue}
             setSearchValue={setSearchValue}
             placeholder="Tìm kiếm qua địa chỉ"
           />
-          <RoomList roomList={allspaces.data} />
+          {allspaces.data.length == 0 ? (
+            <EmptyList message="Không có phòng" />
+          ) : (
+            <RoomList roomList={allspaces.data} />
+          )}
         </div>
       )}
       <div className="my-10 flex justify-center">
