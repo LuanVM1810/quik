@@ -20,7 +20,7 @@ const Search = ({ placeholder, setSearchValue }: Props) => {
   return (
     <>
       <div className="flex items-center my-10 border-2 border-[#506DF7] bg-white rounded-[8px]">
-        <span className="ml-2">
+        <span className="ml-4">
           <CiSearch size={"24px"} />
         </span>
         <input
@@ -28,14 +28,14 @@ const Search = ({ placeholder, setSearchValue }: Props) => {
           onChange={onChangeSearch}
           placeholder={placeholder}
           type="Search"
-          className="w-[95%] h-full rounded-[8px] px-4 py-2 outline-none"
+          className="w-[100%] h-full rounded-[8px] px-4 py-2 outline-none"
         />
         <button
           type="button"
-          className="bg-quik-purple text-white"
+          className="bg-quik-purple text-white min-w-[100px] px-4 py-2"
           onClick={handleConfirm}
         >
-          Xác nhận
+          Tìm kiếm
         </button>
       </div>
     </>
