@@ -78,7 +78,7 @@ export default function RoomDetail() {
       })
       .then((response) => {
         setIsLoading(false);
-        // console.log(response.data.data);
+        console.log(response.data.data);
         toast.success(
           "Đăng kí thành công, kiểm tra email để xem thông tin đặt hàng"
         );
