@@ -25,6 +25,7 @@ import ProtectedRoute from "./routes/ProtectedRoute";
 import SignIn from "./components/SingIn/SingIn";
 import { useContext } from "react";
 import { AuthContext } from "./context/AuthProvider";
+import PaymentQRCode from "./components/PaymentQRCode/PaymentQRCode";
 
 function App() {
   const context = useContext(AuthContext);
@@ -64,6 +65,7 @@ function App() {
             </ProtectedRoute>
           }
         />
+        <Route path="payment" element={<PaymentQRCode />} />
         {/* Admin Route */}
         <Route path="/admin" element={<AdminLayout />}>
           <Route index element={<UserList />} />

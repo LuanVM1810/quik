@@ -14,7 +14,7 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DateTimePicker } from "@mui/x-date-pickers/DateTimePicker";
 import { CiClock2 } from "react-icons/ci";
 import ImageSlider from "../ImageSlider/ImageSlider";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import workingSpaceApi from "../../services/WorkingSpaceApi";
 import { WorkingSpaceDetail } from "../../interfaces/WorkingSpaceInterface";
 import reviewApi from "../../services/ReviewApi";
@@ -42,6 +42,7 @@ export default function RoomDetail() {
   const [roomDetail, setRoomDetail] = useState<WorkingSpaceDetail>();
   const [reviews, setReviews] = useState<Review>();
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -82,6 +83,7 @@ export default function RoomDetail() {
         toast.success(
           "Đăng kí thành công, kiểm tra email để xem thông tin đặt hàng"
         );
+        navigate("/payment");
       })
       .catch((error) => {
         setIsLoading(false);
