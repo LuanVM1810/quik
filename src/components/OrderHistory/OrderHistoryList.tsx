@@ -1,5 +1,4 @@
 import { Divider } from "@mui/material";
-import { HiOutlineMapPin } from "react-icons/hi2";
 import { PiCreditCard } from "react-icons/pi";
 // import { IoReload } from "react-icons/io5";
 // import { IoRemoveCircleOutline } from "react-icons/io5";
@@ -23,15 +22,18 @@ const OrderHistoryList = ({ bookingList }: Props) => {
               <div className="font-semibold text-[20px]">{booking.title}</div>
             </div>
             <div className="flex px-2 pb-4 gap-2 max-lg:items-center">
-              <div className="w-[100px] h-[100px] lg:h-[140px] lg:w-[220px] border-2">
-                <img src={booking.imageUrl} className="object-cover" />
+              <div className="w-100 h-100 lg:h-140 lg:w-220 border-2">
+                <img
+                  src={booking.imageUrl}
+                  className="object-cover w-full h-full"
+                />
               </div>
               <div className="lg:flex-col lg:gap-20 text-base md:text-lg">
                 <p className="font-medium text-[18px]">
                   {booking.businessName}
                 </p>
                 <p className="text-[#7D848D] font-normal flex gap-1 items-center">
-                  <HiOutlineMapPin size={"16px"} />
+                  {/* <HiOutlineMapPin size={"16px"} /> */}
                   {booking.location}
                 </p>
                 <p className="font-bold text-[#4C4DDC] md:text-lg">

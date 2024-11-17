@@ -58,9 +58,7 @@ const RoomList = ({ roomList }: Props) => {
                   readOnly
                 />
                 <p className="font-normal text-xs text-[#1B1E28]  md:text-sm lg:text-base">
-                  {item.rating != 0
-                    ? item.rating.toFixed(1)
-                    : "Chưa có đánh giá"}
+                  {item.rating != 0 ? item.rating.toFixed(1) : "Chưa có"}
                 </p>
               </div>
               <div className="pl-1">

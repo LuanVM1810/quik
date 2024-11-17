@@ -5,6 +5,10 @@ const userApi = {
     const url = `/User/GetById/${username}`;
     return axiosClient.get(url);
   },
+  getAll: () => {
+    const url = "/User/GetAll";
+    return axiosClient.get(url);
+  },
 };
 
 export default userApi;

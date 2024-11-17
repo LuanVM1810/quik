@@ -54,6 +54,7 @@ const AllSpace = () => {
   const location = useLocation();
   const state = location.state;
   const [searchValue, setSearchValue] = useState(state ?? "");
+  const [roomType, setRoomType] = useState("");
   const [allspaces, allSpaceDispatch] = useReducer(allSpaceReducer, initState);
 
   // console.log(state);
@@ -64,7 +65,10 @@ const AllSpace = () => {
         type: "GET_ALLSPACE_REQUEST",
       });
       try {
-        const fetchWorkingSpace = await workingSpaceApi.search(searchValue);
+        const fetchWorkingSpace = await workingSpaceApi.search(
+          searchValue,
+          roomType
+        );
         allSpaceDispatch({
           type: "GET_ALLSPACE_SUCCESS",
           data: fetchWorkingSpace.data,
@@ -75,9 +79,10 @@ const AllSpace = () => {
       }
     };
     fetchData();
-  }, [searchValue, state]);
+  }, [searchValue, state, roomType]);
 
   // console.log(allspaces.data);
+  console.log(searchValue, roomType);
 
   return (
     <div className="mb-10">
@@ -86,6 +91,7 @@ const AllSpace = () => {
       ) : (
         <div>
           <Search
+            setRoomType={setRoomType}
             setSearchValue={setSearchValue}
             placeholder="Tìm kiếm qua địa chỉ"
           />

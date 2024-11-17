@@ -23,6 +23,7 @@ import parseDate from "../../utils/parseDate";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import bookingApi from "../../services/bookingApi";
 import { AiOutlineLoading } from "react-icons/ai";
+import { HiOutlineMapPin } from "react-icons/hi2";
 import { toast } from "sonner";
 
 const theme = createTheme({
@@ -78,7 +79,9 @@ export default function RoomDetail() {
       .then((response) => {
         setIsLoading(false);
         // console.log(response.data.data);
-        toast.success(response.data.message);
+        toast.success(
+          "Đăng kí thành công, kiểm tra email để xem thông tin đặt hàng"
+        );
       })
       .catch((error) => {
         setIsLoading(false);
@@ -97,6 +100,12 @@ export default function RoomDetail() {
                 {roomDetail?.roomType}
               </p>
               <p className="font-semibold">{roomDetail?.title}</p>
+            </div>
+            <div className="mt-5 text-sm flex items-center">
+              <span className="mr-4">
+                <HiOutlineMapPin size={24} />
+              </span>
+              {roomDetail?.location}
             </div>
             <p className="py-5 font-medium text-quik-black text-xl">
               Từ{" "}
@@ -191,15 +200,7 @@ export default function RoomDetail() {
               )}
             </button>
             <p className="py-5 text-left leading-8">
-              Phòng này hiện đại và ấm áp với sự kết hợp giữa tông màu trắng và
-              nâu tạo cảm giác thoáng đãng. Ánh sáng tự nhiên từ cửa sổ lớn
-              chiếu vào phòng, tôn vẻ đẹp của nội thất. Sàn nhà lát gạch men
-              trắng sáng, tạo cảm giác sạch sẽ và sang trọng. Tranhs trừu tượng
-              trên tường trắng, ghế sofa màu nâu êm ái gần cửa sổ, tạo không
-              gian thư giãn. Tranhs trừu tượng trên tường trắng, ghế sofa màu
-              nâu êm ái gần cửa sổ, tạo không gian thư giãn. Tranhs trừu tượng
-              trên tường trắng, ghế sofa màu nâu êm ái gần cửa sổ, tạo không
-              gian thư giãn.
+              {roomDetail?.description}
             </p>
           </div>
           <div className="my-5 lg:col-start-1">
