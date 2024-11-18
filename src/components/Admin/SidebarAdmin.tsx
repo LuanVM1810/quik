@@ -7,6 +7,7 @@ import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { RiLogoutBoxLine } from "react-icons/ri";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthProvider";
+import { SiBookmeter } from "react-icons/si";
 import { toast } from "sonner";
 
 const SidebarAdmin = () => {
@@ -60,6 +61,18 @@ const SidebarAdmin = () => {
             >
               <GrTransaction size={24} />
               Giao dịch
+            </li>
+          </NavLink>
+          <NavLink to="bookings">
+            <li
+              className={`${
+                location.pathname == "/admin/bookings"
+                  ? "text-white bg-quik-purple"
+                  : "text-[#131313] "
+              } flex items-center rounded-2xl gap-2 px-4 py-2 transition-all duration-300`}
+            >
+              <SiBookmeter size={24} />
+              Đơn đặt
             </li>
           </NavLink>
           <NavLink to="revenue">

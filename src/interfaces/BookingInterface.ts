@@ -7,7 +7,7 @@ export interface CreateBooking {
   numberOfPeople: number | undefined;
 }
 
-export interface BookingList {
+export interface Booking {
   bookingId: string;
   username: string;
   spaceId: string;

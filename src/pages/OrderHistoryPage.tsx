@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import OrderHistoryList from "../components/OrderHistory/OrderHistoryList";
 import bookingApi from "../services/bookingApi";
-import { BookingList } from "../interfaces/BookingInterface";
+import { Booking } from "../interfaces/BookingInterface";
 
 const OrderHistoryPage = () => {
   const [orderStatus, setOrderStatus] = useState("Chưa thanh toán");
   const username = localStorage.getItem("username");
-  const [bookingList, setBookingList] = useState<BookingList[]>([]);
+  const [bookingList, setBookingList] = useState<Booking[]>([]);
   const orderPending = () => {
     setOrderStatus("Chưa thanh toán");
   };

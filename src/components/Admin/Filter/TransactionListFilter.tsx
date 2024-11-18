@@ -11,7 +11,7 @@ const TransactionListFilter = () => {
           />
         </div>
         <div className="flex flex-col gap-2">
-          <label>Mã phòng</label>
+          <label>Tên phòng</label>
           <input
             placeholder="Nhập mã phòng"
             className="outline-none px-4 py-2 rounded-2xl transition-all duration-300 focus:scale-110 focus:shadow-btn"

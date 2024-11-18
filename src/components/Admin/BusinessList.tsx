@@ -1,17 +1,17 @@
-import { Pagination } from "@mui/material";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+// import { Pagination } from "@mui/material";
+// import { createTheme, ThemeProvider } from "@mui/material/styles";
 import BusinessListFilter from "./Filter/BusinessListFilter";
 import { useEffect, useState } from "react";
 import BusinessApi from "../../services/BusinessApi";
 import { Business } from "../../interfaces/BusinessInterface";
 
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: "#506df7", // Your custom primary color
-    },
-  },
-});
+// const theme = createTheme({
+//   palette: {
+//     primary: {
+//       main: "#506df7", // Your custom primary color
+//     },
+//   },
+// });
 
 // const businessData = [
 //   {
@@ -133,11 +133,11 @@ const BusinessList = () => {
           </tbody>
         </table>
       </div>
-      <div className="mt-5 flex justify-center">
+      {/* <div className="mt-5 flex justify-center">
         <ThemeProvider theme={theme}>
           <Pagination count={5} color="primary" variant="text" />
         </ThemeProvider>
-      </div>
+      </div> */}
     </div>
   );
 };

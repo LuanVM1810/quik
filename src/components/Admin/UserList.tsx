@@ -1,17 +1,17 @@
-import { Pagination } from "@mui/material";
+// import { Pagination } from "@mui/material";
 import UserListFilter from "./Filter/UserListFilter";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+// import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useEffect, useState } from "react";
 import userApi from "../../services/userApi";
 import { UserInfor } from "../../interfaces/UserInterface";
 
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: "#506df7", // Your custom primary color
-    },
-  },
-});
+// const theme = createTheme({
+//   palette: {
+//     primary: {
+//       main: "#506df7", // Your custom primary color
+//     },
+//   },
+// });
 
 // const usersData = [
 //   {
@@ -157,11 +157,11 @@ const UserList = () => {
           </tbody>
         </table>
       </div>
-      <div className="mt-5 flex justify-center">
+      {/* <div className="mt-5 flex justify-center">
         <ThemeProvider theme={theme}>
           <Pagination count={5} color="primary" variant="text" />
         </ThemeProvider>
-      </div>
+      </div> */}
     </div>
   );
 };

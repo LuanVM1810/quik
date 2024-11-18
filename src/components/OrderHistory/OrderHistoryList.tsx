@@ -5,18 +5,20 @@ import { PiCreditCard } from "react-icons/pi";
 import { CiCalendarDate } from "react-icons/ci";
 import { IoIosBusiness } from "react-icons/io";
 import { IoTime } from "react-icons/io5";
-import { BookingList } from "../../interfaces/BookingInterface";
 import EmptyList from "../EmptyList/EmptyList";
 import parseDate from "../../utils/parseDate";
 import parseDateTime from "../../utils/parseTime";
 import { HiOutlineMapPin } from "react-icons/hi2";
 import { FaMoneyCheckDollar } from "react-icons/fa6";
+import { Booking } from "../../interfaces/BookingInterface";
+import { useNavigate } from "react-router-dom";
 
 type Props = {
-  bookingList: BookingList[];
+  bookingList: Booking[];
 };
 
 const OrderHistoryList = ({ bookingList }: Props) => {
+  const navigate = useNavigate();
   return (
     <div className="flex flex-col lg:flex-row lg:flex-wrap lg:gap-10 my-5 text-[13px] md:text-[16px]">
       {bookingList.length != 0 ? (
@@ -80,8 +82,20 @@ const OrderHistoryList = ({ bookingList }: Props) => {
             </div>
             <Divider variant="fullWidth" />
             <div className="flex py-2 px-2">
-              <button className=" bg-[#506DF7] text-white px-6 py-2 rounded-lg ml-auto">
-                Đánh giá
+              <button
+                onClick={() => {
+                  navigate("/payment", {
+                    state: { amount: booking.totalAmount },
+                  });
+                }}
+                disabled={booking.status == "Đã thanh toán" ? true : false}
+                className={` ${
+                  booking.status == "Đã thanh toán"
+                    ? `bg-gray-500`
+                    : `bg-[#506DF7]`
+                }  text-white px-6 py-2 rounded-lg ml-auto`}
+              >
+                Thanh toán
               </button>
             </div>
           </div>

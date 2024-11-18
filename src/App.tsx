@@ -26,6 +26,7 @@ import SignIn from "./components/SingIn/SingIn";
 import { useContext } from "react";
 import { AuthContext } from "./context/AuthProvider";
 import PaymentQRCode from "./components/PaymentQRCode/PaymentQRCode";
+import BookingList from "./components/Admin/BookingList";
 
 function App() {
   const context = useContext(AuthContext);
@@ -71,6 +72,7 @@ function App() {
           <Route index element={<UserList />} />
           <Route path="business" element={<BusinessList />} />
           <Route path="transaction" element={<TransactionList />} />
+          <Route path="bookings" element={<BookingList />} />
           <Route path="revenue" element={<Revenue />} />
         </Route>
         {/* 404 Page */}

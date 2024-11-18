@@ -2,19 +2,19 @@ import { useEffect, useReducer, useState } from "react";
 import RoomList from "../components/RoomList/RoomList";
 import Search from "../components/Search/Search";
 import Loading from "../components/Loading/Loading";
-import { Pagination } from "@mui/material";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+// import { Pagination } from "@mui/material";
+// import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useLocation } from "react-router-dom";
 import workingSpaceApi from "../services/WorkingSpaceApi";
 import EmptyList from "../components/EmptyList/EmptyList";
 
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: "#506df7", // Your custom primary color
-    },
-  },
-});
+// const theme = createTheme({
+//   palette: {
+//     primary: {
+//       main: "#506df7", // Your custom primary color
+//     },
+//   },
+// });
 
 const initState = {
   loading: false,
@@ -102,11 +102,11 @@ const AllSpace = () => {
           )}
         </div>
       )}
-      <div className="my-10 flex justify-center">
+      {/* <div className="my-10 flex justify-center">
         <ThemeProvider theme={theme}>
           <Pagination count={5} color="primary" variant="text" />
         </ThemeProvider>
-      </div>
+      </div> */}
     </div>
   );
 };
