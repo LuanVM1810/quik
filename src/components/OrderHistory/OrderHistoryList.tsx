@@ -2,8 +2,15 @@ import { Divider } from "@mui/material";
 import { PiCreditCard } from "react-icons/pi";
 // import { IoReload } from "react-icons/io5";
 // import { IoRemoveCircleOutline } from "react-icons/io5";
+import { CiCalendarDate } from "react-icons/ci";
+import { IoIosBusiness } from "react-icons/io";
+import { IoTime } from "react-icons/io5";
 import { BookingList } from "../../interfaces/BookingInterface";
 import EmptyList from "../EmptyList/EmptyList";
+import parseDate from "../../utils/parseDate";
+import parseDateTime from "../../utils/parseTime";
+import { HiOutlineMapPin } from "react-icons/hi2";
+import { FaMoneyCheckDollar } from "react-icons/fa6";
 
 type Props = {
   bookingList: BookingList[];
@@ -14,29 +21,46 @@ const OrderHistoryList = ({ bookingList }: Props) => {
     <div className="flex flex-col lg:flex-row lg:flex-wrap lg:gap-10 my-5 text-[13px] md:text-[16px]">
       {bookingList.length != 0 ? (
         bookingList.map((booking) => (
-          <div className="bg-white mb-5 rounded-md shadow-btn h-auto lg:min-w-[450px]">
+          <div className="bg-white mb-5 rounded-md shadow-btn h-auto lg:w-[450px] ">
             <div className="flex gap-2 items-center pt-2 px-2 pb-4">
               <div className=" bg-[#506DF7] cursor-pointer text-white font-medium text-xs p-1 rounded-[8px] lg:text-sm">
                 {booking.roomType}
               </div>
               <div className="font-semibold text-[20px]">{booking.title}</div>
             </div>
+
             <div className="flex px-2 pb-4 gap-2 max-lg:items-center">
-              <div className="w-100 h-100 lg:h-140 lg:w-220 border-2">
-                <img
-                  src={booking.imageUrl}
-                  className="object-cover w-full h-full"
-                />
-              </div>
-              <div className="lg:flex-col lg:gap-20 text-base md:text-lg">
-                <p className="font-medium text-[18px]">
+              <div className="lg:flex-col space-y-2 truncate lg:gap-20 text-sm md:text-base">
+                <p className="flex items-center gap-1 font-medium text-[18px]">
+                  <span>
+                    <IoIosBusiness size={"18px"} />
+                  </span>
                   {booking.businessName}
                 </p>
                 <p className="text-[#7D848D] font-normal flex gap-1 items-center">
-                  {/* <HiOutlineMapPin size={"16px"} /> */}
+                  <span>
+                    <HiOutlineMapPin size={"16px"} />
+                  </span>
                   {booking.location}
                 </p>
-                <p className="font-bold text-[#4C4DDC] md:text-lg">
+                <p className="text-[#7D848D] font-normal flex gap-1 items-center">
+                  <span>
+                    <CiCalendarDate size={"16px"} />
+                  </span>
+                  {parseDate(booking.bookingDate.toString())}
+                </p>
+
+                <p className="text-[#7D848D] font-normal flex gap-1 items-center">
+                  <span>
+                    <IoTime size={"16px"} />
+                  </span>
+                  {parseDateTime(booking.startTime.toString())} -{" "}
+                  {parseDateTime(booking.endTime.toString())}
+                </p>
+                <p className="flex items-center gap-1 font-bold text-[#4C4DDC] text-base md:text-lg">
+                  <span>
+                    <FaMoneyCheckDollar size={"18px"} />
+                  </span>
                   {booking.totalAmount} VND
                 </p>
               </div>

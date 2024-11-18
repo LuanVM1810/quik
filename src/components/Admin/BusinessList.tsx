@@ -119,7 +119,6 @@ const BusinessList = () => {
               <th className="px-4 py-2">Địa chỉ</th>
               <th className="px-4 py-2">Email</th>
               <th className="px-4 py-2">Số điện thoại</th>
-              <th className="px-4 py-2">Rating</th>
             </tr>
           </thead>
           <tbody>
@@ -129,7 +128,6 @@ const BusinessList = () => {
                 <td className="border px-4 py-2">{item.location}</td>
                 <td className="border px-4 py-2">{item.email}</td>
                 <td className="border px-4 py-2">{item.phoneNumber}</td>
-                <th className="border px-4 py-2">{item.rating}</th>
               </tr>
             ))}
           </tbody>

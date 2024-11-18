@@ -57,7 +57,7 @@ const AllSpace = () => {
   const [roomType, setRoomType] = useState(type ?? "");
   const [allspaces, allSpaceDispatch] = useReducer(allSpaceReducer, initState);
 
-  console.log(search, type);
+  // console.log(search, type);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -82,7 +82,7 @@ const AllSpace = () => {
   }, [searchValue, roomType]);
 
   // console.log(allspaces.data);
-  console.log(searchValue, roomType);
+  // console.log(searchValue, roomType);
 
   return (
     <div className="mb-10">

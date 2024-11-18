@@ -79,11 +79,19 @@ export default function RoomDetail() {
       })
       .then((response) => {
         setIsLoading(false);
-        console.log(response.data.data);
-        toast.success(
-          "Đăng kí thành công, kiểm tra email để xem thông tin đặt hàng"
-        );
-        navigate("/payment");
+        console.log(response);
+        if (response.data.data != null) {
+          navigate("/payment", {
+            state: {
+              amount: response.data.data.totalAmount,
+            },
+          });
+          toast.success(
+            "Đăng kí thành công, kiểm tra email để xem thông tin đặt hàng"
+          );
+        } else if (response.data.data == null) {
+          toast.error(response.data.message);
+        }
       })
       .catch((error) => {
         setIsLoading(false);

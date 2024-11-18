@@ -42,11 +42,10 @@ const Footer = () => {
             Dịch vụ nổi bật
           </div>
           <ul>
-            <li>Không gian làm việc chung</li>
-            <li>Phòng họp</li>
-            <li>Study Hub</li>
-            <li>Không gian văn phòng</li>
             <li>Không gian sự kiện</li>
+            <li>Study Hub</li>
+            <li>Không gian làm việc</li>
+            <li>Cafe làm việc</li>
           </ul>
         </div>
         <div className="leading-8">
