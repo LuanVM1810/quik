@@ -8,6 +8,7 @@ import ScrollToTop from "../components/ScrollToTop/ScrollToTop";
 import Footer from "../components/Footer/Footer";
 import { Toaster } from "sonner";
 import RenderIf from "../components/RenderIf/RenderIf";
+import { Analytics } from "@vercel/analytics/react";
 
 const RootLayout = () => {
   const location = useLocation();
@@ -19,6 +20,7 @@ const RootLayout = () => {
         context?.isOpen === true && `overflow-y-clip`
       } bg-[#edf0fe] -z-1 text-[#2C2C2C] min-h-screen px-4 pt-14 pb-4 overflow-x-hidden lg:px-8`}
     >
+      <Analytics />
       <ScrollToTop />
       <header>
         <RenderIf isTrue={location.pathname.slice(0, 6) !== "/admin"}>
