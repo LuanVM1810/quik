@@ -27,6 +27,9 @@ const RoomList = ({ roomList }: Props) => {
                   <FaRegHeart size={"16px"} color="white" />
                 </span>
               </div>
+              <div className="bg-quik-purple pl-2 py-1 font-thin text-white rounded-md">
+                {item.roomType}
+              </div>
               <div className="pl-1 text-[#1B1E28]">
                 <p className="text-sm truncate font-extrabold md:text-base lg:text-lg">
                   {item.title}

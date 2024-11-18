@@ -53,7 +53,11 @@ const SignIn = () => {
         toast.success("Đăng nhập thành công", {
           onAutoClose: () => {
             setIsLoading(false);
-            navigate("/");
+            if (response.data.role == "Admin") {
+              navigate("/admin");
+            } else {
+              navigate("/");
+            }
             authContext?.login();
           },
         });

@@ -16,7 +16,10 @@ const HomePage = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     await e.preventDefault();
     navigate(`/allspace`, {
-      state: searchByLocation,
+      state: {
+        search: searchByLocation,
+        type: "",
+      },
     });
   };
   return (

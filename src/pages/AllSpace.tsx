@@ -52,12 +52,12 @@ const allSpaceReducer = (state: any, action: any) => {
 
 const AllSpace = () => {
   const location = useLocation();
-  const state = location.state;
-  const [searchValue, setSearchValue] = useState(state ?? "");
-  const [roomType, setRoomType] = useState("");
+  const { search, type } = location.state;
+  const [searchValue, setSearchValue] = useState(search ?? "");
+  const [roomType, setRoomType] = useState(type ?? "");
   const [allspaces, allSpaceDispatch] = useReducer(allSpaceReducer, initState);
 
-  // console.log(state);
+  console.log(search, type);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -79,7 +79,7 @@ const AllSpace = () => {
       }
     };
     fetchData();
-  }, [searchValue, state, roomType]);
+  }, [searchValue, roomType]);
 
   // console.log(allspaces.data);
   console.log(searchValue, roomType);

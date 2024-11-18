@@ -176,18 +176,60 @@ const Header = () => {
               } bg-white border-gradient rounded-2xl py-4 w-[250px] top-8 right-4 shadow-btn transition-all duration-700 pl-4`}
             >
               <ul>
-                <NavLink to="/allspace">
-                  <li className="py-2 hover:text-quik-purple">
-                    Không gian sự kiện
-                  </li>
-                </NavLink>
-                <NavLink to="/studyhub">
-                  <li className="py-2 hover:text-quik-purple">Study Hub</li>
-                </NavLink>
-                <li className="py-2 hover:text-quik-purple">
+                <li
+                  onClick={() => {
+                    navigate("/allspace", {
+                      state: {
+                        search: "",
+                        type: "Không gian sự kiện",
+                      },
+                    });
+                  }}
+                  className="py-2 hover:text-quik-purple cursor-pointer"
+                >
+                  Không gian sự kiện
+                </li>
+
+                <li
+                  onClick={() => {
+                    navigate("/allspace", {
+                      state: {
+                        search: "",
+                        type: "Study Hub",
+                      },
+                    });
+                  }}
+                  className="py-2 hover:text-quik-purple cursor-pointer"
+                >
+                  Study Hub
+                </li>
+
+                <li
+                  onClick={() => {
+                    navigate("/allspace", {
+                      state: {
+                        search: "",
+                        type: "Không gian làm việc",
+                      },
+                    });
+                  }}
+                  className="py-2 hover:text-quik-purple cursor-pointer"
+                >
                   Không gian làm việc
                 </li>
-                <li className="py-2 hover:text-quik-purple">Cafe làm việc</li>
+                <li
+                  onClick={() => {
+                    navigate("/allspace", {
+                      state: {
+                        search: "",
+                        type: "Cafe làm việc",
+                      },
+                    });
+                  }}
+                  className="py-2 hover:text-quik-purple cursor-pointer"
+                >
+                  Cafe làm việc
+                </li>
               </ul>
             </div>
           </li>

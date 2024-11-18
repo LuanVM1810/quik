@@ -3,11 +3,22 @@ import { BsFillPeopleFill } from "react-icons/bs";
 import { GrTransaction } from "react-icons/gr";
 import { IoBusinessSharp } from "react-icons/io5";
 import { RiMoneyDollarCircleFill } from "react-icons/ri";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { RiLogoutBoxLine } from "react-icons/ri";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthProvider";
+import { toast } from "sonner";
 
 const SidebarAdmin = () => {
   const location = useLocation();
+  const context = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    context?.logout();
+    navigate("/");
+    toast.success("Đăng xuất thành công");
+  };
   return (
     <div className="fixed top-0 left-0 flex flex-col h-screen max-h-screen w-[230px] bg-white z-10 py-10 text-[16px] text-[#131313]">
       <div className="flex justify-center">
@@ -66,7 +77,10 @@ const SidebarAdmin = () => {
         </ul>
       </div>
       <div className="mt-auto flex gap-2 justify-center">
-        <button className="flex items-center rounded-2xl text-white px-4 py-2 bg-gradient-to-r from-quik-blue to-quik-purple hover:from-quik-green hover:to-quik-purple transition-all duration-500">
+        <button
+          onClick={handleLogout}
+          className="flex items-center rounded-2xl text-white px-4 py-2 bg-gradient-to-r from-quik-blue to-quik-purple hover:from-quik-green hover:to-quik-purple transition-all duration-500"
+        >
           <RiLogoutBoxLine size={24} /> Logout
         </button>
       </div>
